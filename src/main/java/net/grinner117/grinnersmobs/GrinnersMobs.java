@@ -2,6 +2,7 @@ package net.grinner117.grinnersmobs;
 
 import net.grinner117.grinnersmobs.entity.ModEntityTypes;
 import net.grinner117.grinnersmobs.entity.client.PureTitanVillagerRenderer;
+import net.grinner117.grinnersmobs.item.ModItems;
 import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.world.entity.SpawnPlacements;
 import net.minecraft.world.entity.monster.Monster;
@@ -26,11 +27,17 @@ public class GrinnersMobs {
     // Directly reference a slf4j logger
     public GrinnersMobs() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
+
+        ModItems.register(modEventBus);
+
         ModEntityTypes.register(modEventBus);
+
         GeckoLib.initialize();
+
+        modEventBus.addListener(this::commonSetup);
+
         MinecraftForge.EVENT_BUS.register(this);
     }
-
     private void commonSetup(final FMLCommonSetupEvent event) {
         event.enqueueWork(() -> {
             SpawnPlacements.register(ModEntityTypes.PURETITANVILLAGER.get(),
@@ -38,6 +45,7 @@ public class GrinnersMobs {
                     Monster::checkMonsterSpawnRules);
         });
     }
+    //PURETITANVILLAGER
     @Mod.EventBusSubscriber(modid = MODID, bus = Mod.EventBusSubscriber.Bus.MOD)
     public class ClientModEvents {
         @SubscribeEvent
@@ -45,5 +53,4 @@ public class GrinnersMobs {
             EntityRenderers.register(ModEntityTypes.PURETITANVILLAGER.get(), PureTitanVillagerRenderer::new);
         }
     }
-
 }

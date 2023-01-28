@@ -32,10 +32,14 @@ import software.bernie.geckolib3.util.GeckoLibUtil;
 
 
 public class PureTitanVillagerEntity extends Monster implements IAnimatable {
+
+    private static final float KNOCKBACK_RESISTANCE = 1.0F;
+    private static final float ATTACK_KNOCKBACK = 1.5F;
     AnimationFactory manager = GeckoLibUtil.createFactory(this);
 
     public PureTitanVillagerEntity(EntityType<? extends Monster> EntityType, Level Level) {
         super(EntityType, Level);
+        this.xpReward = 10;
     }
 
     private static final EntityDataAccessor<Byte> DATA_FLAGS_ID = SynchedEntityData.defineId(Spider.class, EntityDataSerializers.BYTE);
@@ -44,17 +48,20 @@ public class PureTitanVillagerEntity extends Monster implements IAnimatable {
     public static AttributeSupplier setAttributes() {
         return Monster.createMonsterAttributes()
                 .add(Attributes.MAX_HEALTH, 200.0D)
-                .add(Attributes.ATTACK_DAMAGE, 5.0D)
+                .add(Attributes.ATTACK_DAMAGE, 20.0D)
                 .add(Attributes.ATTACK_SPEED, 0.25F)
                 .add(Attributes.MOVEMENT_SPEED, 1.0F)
-                .add(Attributes.SPAWN_REINFORCEMENTS_CHANCE, 1.5F)
+                .add(Attributes.SPAWN_REINFORCEMENTS_CHANCE, 2.0F)
                 .add(Attributes.JUMP_STRENGTH, 10.0F)
-                .add(Attributes.FOLLOW_RANGE, 64.0D).build();
+                .add(Attributes.FOLLOW_RANGE, 64.0D)
+                .add(Attributes.KNOCKBACK_RESISTANCE, 8.0D)
+                .add(Attributes.ATTACK_KNOCKBACK, 2.0D).build();
+
     }
 
     @Override
     protected void registerGoals() {
-        this.goalSelector.addGoal(3, new MeleeAttackGoal(this, 0.15F, false));
+        this.goalSelector.addGoal(3, new MeleeAttackGoal(this, 0.20F, false));
         this.goalSelector.addGoal(4, new LookAtPlayerGoal(this, Player.class, 128.0F));
         this.targetSelector.addGoal(1, new NearestAttackableTargetGoal<>(this, Player.class, true));
         this.targetSelector.addGoal(2, new NearestAttackableTargetGoal<>(this, AbstractVillager.class, false));

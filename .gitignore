@@ -1,3 +1,5 @@
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
 
 build/
 
@@ -6,3 +8,14 @@ run/
 .idea/
 
 .gradle/
+=======
+=======
+>>>>>>> Stashed changes
+/run/
+/build/
+/.idea/
+/.gradle/
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
