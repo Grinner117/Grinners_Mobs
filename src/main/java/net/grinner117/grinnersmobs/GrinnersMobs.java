@@ -26,19 +26,15 @@ public class GrinnersMobs {
     // Directly reference a slf4j logger
     public GrinnersMobs() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
-
-
         ModEntityTypes.register(modEventBus);
-
         GeckoLib.initialize();
-
         MinecraftForge.EVENT_BUS.register(this);
     }
 
-    private void  commonSetup(final FMLCommonSetupEvent event) {
+    private void commonSetup(final FMLCommonSetupEvent event) {
         event.enqueueWork(() -> {
             SpawnPlacements.register(ModEntityTypes.PURETITANVILLAGER.get(),
-            SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                    SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
                     Monster::checkMonsterSpawnRules);
         });
     }
