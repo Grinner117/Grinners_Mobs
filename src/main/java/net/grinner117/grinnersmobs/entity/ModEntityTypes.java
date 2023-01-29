@@ -1,6 +1,7 @@
 package net.grinner117.grinnersmobs.entity;
 
 import net.grinner117.grinnersmobs.GrinnersMobs;
+import net.grinner117.grinnersmobs.entity.custom.PureTitanLankyEntity;
 import net.grinner117.grinnersmobs.entity.custom.PureTitanVillagerEntity;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EntityType;
@@ -19,6 +20,11 @@ public class ModEntityTypes {
                     () -> EntityType.Builder.of(PureTitanVillagerEntity::new, MobCategory.MONSTER)
                             .sized(2.0F, 7.0F).clientTrackingRange(50)
                             .build(new ResourceLocation(GrinnersMobs.MODID,"puretitanvillager").toString()));
+    public static final RegistryObject<EntityType<PureTitanLankyEntity>> PURETITANLANKY =
+            ENTITY_TYPES.register("puretitanlanky",
+                    () -> EntityType.Builder.of(PureTitanLankyEntity::new, MobCategory.MONSTER)
+                            .sized(3.0F, 20.0F).clientTrackingRange(50)
+                            .build(new ResourceLocation(GrinnersMobs.MODID,"puretitanlanky").toString()));
 
     public static void register(IEventBus eventBus) {
         ENTITY_TYPES.register(eventBus);

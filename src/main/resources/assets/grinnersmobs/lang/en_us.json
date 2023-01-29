@@ -1,4 +1,7 @@
 {
   "item.grinnersmobs.puretitanvillager_spawn_egg": "Pure Titan Villager Spawn Egg",
-  "entity.grinnersmobs.puretitanvillager": "Pure Titan"
+  "item.grinnersmobs.puretitanlanky_spawn_egg": "Pure Titan Lanky Spawn Egg",
+
+  "entity.grinnersmobs.puretitanvillager": "Pure Titan",
+  "entity.grinnersmobs.puretitanlanky": "Pure Titan"
 }
