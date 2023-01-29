@@ -2,7 +2,6 @@ package net.grinner117.grinnersmobs.item;
 
 import net.grinner117.grinnersmobs.GrinnersMobs;
 import net.grinner117.grinnersmobs.entity.ModEntityTypes;
-import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.common.ForgeSpawnEggItem;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -15,7 +14,7 @@ public class ModItems {
             DeferredRegister.create(ForgeRegistries.ITEMS, GrinnersMobs.MODID);
     public static final RegistryObject<Item> PURETITANVILLAGER_SPAWN_EGG = ITEMS.register("puretitanvillager_spawn_egg",
             () -> new ForgeSpawnEggItem(ModEntityTypes.PURETITANVILLAGER, 0x22b341, 0x19732e,
-                    new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
+                    new Item.Properties()));
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);

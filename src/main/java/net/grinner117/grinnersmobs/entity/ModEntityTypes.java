@@ -17,10 +17,11 @@ public class ModEntityTypes {
     public static final RegistryObject<EntityType<PureTitanVillagerEntity>> PURETITANVILLAGER =
             ENTITY_TYPES.register("puretitanvillager",
                     () -> EntityType.Builder.of(PureTitanVillagerEntity::new, MobCategory.MONSTER)
-                            .sized(2.0F, 7.0F).clientTrackingRange(50)
+                            .sized(2.0F, 12.0F)
                             .build(new ResourceLocation(GrinnersMobs.MODID,"puretitanvillager").toString()));
 
     public static void register(IEventBus eventBus) {
+
         ENTITY_TYPES.register(eventBus);
     }
 }
