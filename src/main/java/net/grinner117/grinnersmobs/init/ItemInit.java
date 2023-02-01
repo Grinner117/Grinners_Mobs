@@ -15,16 +15,20 @@ public class ItemInit {
     public static final ArmorMaterial LIGHTMONSTERBONEARMORMATERIAL = new LightMonsterBoneArmorMaterial();
 
     public static final RegistryObject<Item> LIGHTMONSTERBONEARMOR_HELMET = ITEMS.registry("pink_helmet",
-            () -> new ArmorItem(LightMonsterBoneArmorMaterial.LightMonsterBoneArmor, EquipmentSlot.HEAD, (new Item.Properties().tab(ModCreativeModeTab.GRINNERSTAB))));
+            () -> new ArmorItem(LightMonsterBoneArmorMaterial.LightMonsterBoneArmor, EquipmentSlot.HEAD,
+                    (new Item.Properties().tab(ModCreativeModeTab.GRINNERSTAB))));
 
     public static final RegistryObject<Item> LIGHTMONSTERBONEARMOR_CHESTPLATE = ITEMS.registry("pink_chestplate",
-            () -> new ArmorItem(LightMonsterBoneArmorMaterial.LightMonsterBoneArmor, EquipmentSlot.CHEST, (new Item.Properties().tab(ModCreativeModeTab.GRINNERSTAB))));
+            () -> new ArmorItem(LightMonsterBoneArmorMaterial.LightMonsterBoneArmor, EquipmentSlot.CHEST,
+                    (new Item.Properties().tab(ModCreativeModeTab.GRINNERSTAB))));
 
     public static final RegistryObject<Item> LIGHTMONSTERBONEARMOR_LEGGINGS = ITEMS.registry("pink_leggings",
-            () -> new ArmorItem(LightMonsterBoneArmorMaterial.LightMonsterBoneArmor, EquipmentSlot.LEGS, (new Item.Properties().tab(ModCreativeModeTab.GRINNERSTAB))));
+            () -> new ArmorItem(LightMonsterBoneArmorMaterial.LightMonsterBoneArmor, EquipmentSlot.LEGS,
+                    (new Item.Properties().tab(ModCreativeModeTab.GRINNERSTAB))));
 
     public static final RegistryObject<Item> LIGHTMONSTERBONEARMOR_BOOTS = ITEMS.registry("pink_boots",
-            () -> new ArmorItem(LightMonsterBoneArmorMaterial.LightMonsterBoneArmor, EquipmentSlot.FEET, (new Item.Properties().tab(ModCreativeModeTab.GRINNERSTAB))));
+            () -> new ArmorItem(LightMonsterBoneArmorMaterial.LightMonsterBoneArmor, EquipmentSlot.FEET,
+                    (new Item.Properties().tab(ModCreativeModeTab.GRINNERSTAB))));
 
  //   public static final Item LIGHTMONSTERBONEARMORMATERIAL_HELEMENT = new LightMonsterBoneArmor(LightMonsterBoneArmorMaterial,
        //     EquipmentSlot.HEAD, (new Item.Properties().tab(ModCreativeModeTab.GRINNERSTAB)));

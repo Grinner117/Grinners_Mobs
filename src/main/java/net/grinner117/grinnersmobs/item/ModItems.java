@@ -1,6 +1,7 @@
 package net.grinner117.grinnersmobs.item;
 
 import net.grinner117.grinnersmobs.GrinnersMobs;
+import net.grinner117.grinnersmobs.ModArmorMaterial.LightMonsterBoneArmorMaterial;
 import net.grinner117.grinnersmobs.armor.LightMonsterBoneArmor;
 import net.grinner117.grinnersmobs.entity.ModEntityTypes;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -39,16 +40,16 @@ public class ModItems {
             () -> new Item(new Item.Properties().tab(ModCreativeModeTab.GRINNERSTAB)));
 
     public static final RegistryObject<Item> LIGHTMONSTERBONE_HELMET = ITEMS.register("lightmonsterbone_helmet",
-            () -> new ArmorItem(LightMonsterBoneArmor.LIGHTMONSTERBONEARMOR, EquipmentSlot.HEAD, new Item.Properties().tab(ModCreativeModeTab.GRINNERSTAB)));
+            () -> new ArmorItem(LightMonsterBoneArmorMaterial.LIGHTMONSTERBONEARMOR, EquipmentSlot.HEAD, new Item.Properties().tab(ModCreativeModeTab.GRINNERSTAB)));
 
     public static final RegistryObject<Item> LIGHTMONSTERBONE_CHESTPLATE = ITEMS.register("lightmonsterbone_chestplate",
-            () -> new ArmorItem(LightMonsterBoneArmor.LIGHTMONSTERBONEARMOR, EquipmentSlot.CHEST, new Item.Properties().tab(ModCreativeModeTab.GRINNERSTAB)));
+            () -> new ArmorItem(LightMonsterBoneArmorMaterial.LIGHTMONSTERBONEARMOR, EquipmentSlot.CHEST, new Item.Properties().tab(ModCreativeModeTab.GRINNERSTAB)));
 
     public static final RegistryObject<Item> LIGHTMONSTERBONE_LEGGINGS = ITEMS.register("lightmonsterbone_leggings",
-            () -> new ArmorItem(LightMonsterBoneArmor.LIGHTMONSTERBONEARMOR, EquipmentSlot.LEGS, new Item.Properties().tab(ModCreativeModeTab.GRINNERSTAB)));
+            () -> new ArmorItem(LightMonsterBoneArmorMaterial.LIGHTMONSTERBONEARMOR, EquipmentSlot.LEGS, new Item.Properties().tab(ModCreativeModeTab.GRINNERSTAB)));
 
     public static final RegistryObject<Item> LIGHTMONSTERBONE_BOOTS = ITEMS.register("lightmonsterbone_boots",
-            () -> new ArmorItem(LightMonsterBoneArmor.LIGHTMONSTERBONEARMOR, EquipmentSlot.FEET, new Item.Properties().tab(ModCreativeModeTab.GRINNERSTAB)));
+            () -> new ArmorItem(LightMonsterBoneArmorMaterial.LIGHTMONSTERBONEARMOR, EquipmentSlot.FEET, new Item.Properties().tab(ModCreativeModeTab.GRINNERSTAB)));
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
