@@ -1,5 +1,5 @@
 {
-  "type": "grinnersmobs:puretitanvillager",
+  "type": "grinnersmobs:puretitanlanky",
   "pools": [
     {
       "rolls": 6,
@@ -7,7 +7,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "minecraft:bone",
+          "name": "grinnersmobs:monsterbone",
           "functions": [
             {
               "function": "minecraft:looting_enchant",
@@ -26,7 +26,7 @@
         },
         {
           "type": "minecraft:item",
-          "name": "minecraft:rotten_flesh",
+          "name": "grinnersmobs:monsterflesh",
           "functions": [
             {
               "function": "minecraft:set_count",
@@ -45,7 +45,6 @@
         },
         {
           "type": "minecraft:item",
-          "name": "minecraft:leather",
           "functions": [
             {
               "function": "minecraft:set_count",
