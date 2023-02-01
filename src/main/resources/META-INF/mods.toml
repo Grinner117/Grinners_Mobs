@@ -42,9 +42,11 @@ authors="Grinner117" #optional
 
 # The description text for the mod (multi line!) (#mandatory)
 description='''
-This is a long form description of the mod. You can write whatever you want here
-
-Have some lorem ipsum.
+Introducing Grinner's Mobs for Minecraft 1.19.2!
+This mod brings a new and dangerous mob to the game - the Pure Titan.
+Inspired by the Titans from the anime Attack on Titans, these massive creatures can be found roaming in old forests.
+With their towering height and incredible strength, the Pure Titans will test even the bravest of players.
+So gear up, and get ready for an epic battle against these Grinner's Mobs.
 
 '''
 # A dependency - use the . to indicate dependency for a specific modid. Dependencies are optional.

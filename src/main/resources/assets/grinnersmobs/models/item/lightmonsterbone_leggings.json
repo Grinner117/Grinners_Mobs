@@ -1,0 +1,7 @@
+{
+"parent": "armor/generated",
+"textures": {
+"layer0": "armor/lightmonsterbonearmor_leggings_1",
+"layer1": "armor/lightmonsterbonearmor_leggings_2"
+}
+}
