@@ -38,13 +38,14 @@ public class PureTitanLankyEntity extends Monster implements IAnimatable {
     public PureTitanLankyEntity(EntityType<? extends Monster> EntityType, Level Level) {
         super(EntityType, Level);
         this.xpReward = 10;
+        this.canStartSwimming();
     }
 
     private static final EntityDataAccessor<Byte> DATA_FLAGS_ID = SynchedEntityData.defineId(Spider.class, EntityDataSerializers.BYTE);
 
     public static AttributeSupplier setAttributes() {
         return Monster.createMonsterAttributes()
-                .add(Attributes.MAX_HEALTH, 150.0D)
+                .add(Attributes.MAX_HEALTH, 2.0D)
                 .add(Attributes.ATTACK_DAMAGE, 20.0D)
                 .add(Attributes.ATTACK_SPEED, 0.40F)
                 .add(Attributes.MOVEMENT_SPEED, 1.0F)

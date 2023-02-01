@@ -1,5 +1,5 @@
 {
-  "type": "grinnersmobs:puretitanvillager",
+  "type": "minecraft:entity",
   "pools": [
     {
       "rolls": 6,
