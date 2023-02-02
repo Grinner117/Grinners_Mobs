@@ -1,4 +1,4 @@
-package net.grinner117.grinnersmobs.item;
+package net.grinner117.grinnersmobs.perks;
 
 import net.grinner117.grinnersmobs.base.IDamageHandlingArmor;
 import net.minecraft.world.damagesource.DamageSource;
@@ -15,18 +15,18 @@ import net.minecraft.world.level.Level;
 import net.minecraftforge.event.entity.living.LivingDamageEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 
-public class Bone_Perk extends ArmorItem implements IDamageHandlingArmor {
-    public Bone_Perk(ArmorMaterial material, EquipmentSlot slot, Properties properties) {
+public class FireReflect_Perk extends ArmorItem implements IDamageHandlingArmor{
+    public FireReflect_Perk(ArmorMaterial material, EquipmentSlot slot, Properties properties) {
         super(material, slot, properties);
+
     }
 
     @Override
     public void onArmorTick(ItemStack stack, Level world, Player player) {
         if (!world.isClientSide()) {
-            player.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 200, 3));
+            player.addEffect(new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 250, 3));
         }
     }
-
     @SubscribeEvent
     public static void armorAttackHandler(LivingDamageEvent event){
         for (ItemStack armor : event.getEntity().getArmorSlots()){
@@ -41,10 +41,10 @@ public class Bone_Perk extends ArmorItem implements IDamageHandlingArmor {
         Entity attacker = source.getEntity();
         if (attacker instanceof LivingEntity){
             attacker.hurt(DamageSource.ON_FIRE, amount / 2);
-            attacker.setSecondsOnFire(0);
+            attacker.setSecondsOnFire(4);
             return amount / 2;
         } else {
             return amount;
         }
     }
-   }
+}

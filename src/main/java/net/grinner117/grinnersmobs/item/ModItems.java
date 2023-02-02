@@ -3,8 +3,10 @@ package net.grinner117.grinnersmobs.item;
 import net.grinner117.grinnersmobs.GrinnersMobs;
 import net.grinner117.grinnersmobs.base.ModArmorMaterial;
 import net.grinner117.grinnersmobs.entity.ModEntityTypes;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.sounds.SoundEvent;
+import net.grinner117.grinnersmobs.perks.DamageRes2_Perk;
+import net.grinner117.grinnersmobs.perks.Jump2_Perk;
+import net.grinner117.grinnersmobs.perks.Nightvison_Perk;
+import net.grinner117.grinnersmobs.perks.Speed4_Perk;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
@@ -43,14 +45,15 @@ public class ModItems {
     public static final RegistryObject<Item> MONSTERLEATHER = ITEMS.register("monsterleather",
             () -> new Item(new Item.Properties().tab(ModCreativeModeTab.GRINNERSTAB)));
 
+    
     public static final RegistryObject<ArmorItem> LIGHTMONSTERBONEARMOR_HELMET = ITEMS.register("lightmonsterbonearmor_helmet",
-            () -> new ArmorItem(ArmorTiers.LIGHTMONSTERBONEARMOR, EquipmentSlot.HEAD, props()));
+            () -> new Nightvison_Perk(ArmorTiers.LIGHTMONSTERBONEARMOR, EquipmentSlot.HEAD, props()));
     public static final RegistryObject<ArmorItem> LIGHTMONSTERBONEARMOR_CHESTPLATE = ITEMS.register("lightmonsterbonearmor_chestplate",
-            () -> new ArmorItem(ArmorTiers.LIGHTMONSTERBONEARMOR, EquipmentSlot.CHEST, props()));
+            () -> new DamageRes2_Perk(ArmorTiers.LIGHTMONSTERBONEARMOR, EquipmentSlot.CHEST, props()));
     public static final RegistryObject<ArmorItem> LIGHTMONSTERBONEARMOR_LEGGINGS = ITEMS.register("lightmonsterbonearmor_leggings",
-            () -> new Bone_Perk(ArmorTiers.LIGHTMONSTERBONEARMOR, EquipmentSlot.LEGS, props()));
+            () -> new Jump2_Perk(ArmorTiers.LIGHTMONSTERBONEARMOR, EquipmentSlot.LEGS, props()));
     public static final RegistryObject<ArmorItem> LIGHTMONSTERBONEARMOR_BOOTS = ITEMS.register("lightmonsterbonearmor_boots",
-            () -> new Bone_Perk(ArmorTiers.LIGHTMONSTERBONEARMOR, EquipmentSlot.FEET, props()));
+            () -> new Speed4_Perk(ArmorTiers.LIGHTMONSTERBONEARMOR, EquipmentSlot.FEET, props()));
 
 private static Item.Properties props(){return new Item.Properties().tab(ModCreativeModeTab.GRINNERSTAB); }
 
