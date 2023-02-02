@@ -17,4 +17,8 @@ public class ModEvents {
                        event.put(ModEntityTypes.PURETITANLANKY.get(), PureTitanLankyEntity.setAttributes());
         }
     }
+    @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.FORGE)
+    public class ArmorHandlers {
+
+    }
 }

@@ -39,22 +39,22 @@ public class PureTitanVillagerEntity extends Monster implements IAnimatable {
 
     public PureTitanVillagerEntity(EntityType<? extends Monster> EntityType, Level Level) {
         super(EntityType, Level);
-        this.xpReward = 10;
+        this.xpReward = 300;
     }
 
     private static final EntityDataAccessor<Byte> DATA_FLAGS_ID = SynchedEntityData.defineId(Spider.class, EntityDataSerializers.BYTE);
 
     public static AttributeSupplier setAttributes() {
         return Monster.createMonsterAttributes()
-                .add(Attributes.MAX_HEALTH, 200.0D)
-                .add(Attributes.ATTACK_DAMAGE, 20.0D)
+                .add(Attributes.MAX_HEALTH, 215.0D)
+                .add(Attributes.ATTACK_DAMAGE, 17.0D)
                 .add(Attributes.ATTACK_SPEED, 0.25F)
                 .add(Attributes.MOVEMENT_SPEED, 1.0F)
                 .add(Attributes.SPAWN_REINFORCEMENTS_CHANCE, 2.0F)
                 .add(Attributes.JUMP_STRENGTH, 10.0F)
                 .add(Attributes.FOLLOW_RANGE, 64.0D)
                 .add(Attributes.KNOCKBACK_RESISTANCE, 8.0D)
-                .add(Attributes.ATTACK_KNOCKBACK, 2.0D).build();
+                .add(Attributes.ATTACK_KNOCKBACK, 3.0D).build();
 
     }
 
@@ -137,9 +137,8 @@ public class PureTitanVillagerEntity extends Monster implements IAnimatable {
     protected void playStepSound(BlockPos p_34316_, BlockState p_34317_) {
         this.playSound(SoundEvents.GRAVEL_BREAK, 4.0F, 0.01F);
     }
-
     protected SoundEvent getAmbientSound() {
-        return SoundEvents.ZOMBIE_AMBIENT;
+        return SoundEvents.VILLAGER_AMBIENT;
     }
 
     protected SoundEvent getDeathSound() {

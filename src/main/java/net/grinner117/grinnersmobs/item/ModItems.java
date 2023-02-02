@@ -48,9 +48,9 @@ public class ModItems {
     public static final RegistryObject<ArmorItem> LIGHTMONSTERBONEARMOR_CHESTPLATE = ITEMS.register("lightmonsterbonearmor_chestplate",
             () -> new ArmorItem(ArmorTiers.LIGHTMONSTERBONEARMOR, EquipmentSlot.CHEST, props()));
     public static final RegistryObject<ArmorItem> LIGHTMONSTERBONEARMOR_LEGGINGS = ITEMS.register("lightmonsterbonearmor_leggings",
-            () -> new ArmorItem(ArmorTiers.LIGHTMONSTERBONEARMOR, EquipmentSlot.LEGS, props()));
+            () -> new Bone_Perk(ArmorTiers.LIGHTMONSTERBONEARMOR, EquipmentSlot.LEGS, props()));
     public static final RegistryObject<ArmorItem> LIGHTMONSTERBONEARMOR_BOOTS = ITEMS.register("lightmonsterbonearmor_boots",
-            () -> new ArmorItem(ArmorTiers.LIGHTMONSTERBONEARMOR, EquipmentSlot.FEET, props()));
+            () -> new Bone_Perk(ArmorTiers.LIGHTMONSTERBONEARMOR, EquipmentSlot.FEET, props()));
 
 private static Item.Properties props(){return new Item.Properties().tab(ModCreativeModeTab.GRINNERSTAB); }
 
@@ -62,11 +62,11 @@ private static Item.Properties props(){return new Item.Properties().tab(ModCreat
 public static class ArmorTiers{
 public static final ArmorMaterial LIGHTMONSTERBONEARMOR = new ModArmorMaterial(
         "lightmonsterbonearmor",
-        500,
-        new int[]{20,40,50,10},
+        1000,
+        new int[]{7,15,12,7},
         300,
         SoundEvents.ARMOR_EQUIP_NETHERITE,
-        0.5f, 0.4f,
+        8.0f, 0.5f,
         () -> Ingredient.of(ModItems.MONSTERLEATHER.get()));
 
 }

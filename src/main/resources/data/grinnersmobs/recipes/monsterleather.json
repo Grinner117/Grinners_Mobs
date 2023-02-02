@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "cookingtime": 300,
+  "experience": 0.75,
+  "ingredient": {
+    "item": "grinnersmobs:monsterflesh"
+  },
+  "result": "grinnersmobs:monsterleather"
+}

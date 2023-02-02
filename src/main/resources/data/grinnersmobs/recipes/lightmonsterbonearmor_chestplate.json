@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "X": {
+      "item": "grinnersmobs:monsterleather"
+    },
+    "#": {
+      "item": "grinnersmobs:monsterbone"
+    },
+    "N": {
+      "item": "minecraft:netherite_ingot"
+    }
+  },
+  "pattern": [
+    "# #",
+    "XNX",
+    "###"
+  ],
+  "result": {
+    "item": "grinnersmobs:lightmonsterbonearmor_chestplate"
+  }
+}

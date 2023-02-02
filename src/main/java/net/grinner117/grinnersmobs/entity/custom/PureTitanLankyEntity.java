@@ -37,15 +37,14 @@ public class PureTitanLankyEntity extends Monster implements IAnimatable {
 
     public PureTitanLankyEntity(EntityType<? extends Monster> EntityType, Level Level) {
         super(EntityType, Level);
-        this.xpReward = 10;
-        this.canStartSwimming();
+        this.xpReward = 300;
     }
 
     private static final EntityDataAccessor<Byte> DATA_FLAGS_ID = SynchedEntityData.defineId(Spider.class, EntityDataSerializers.BYTE);
 
     public static AttributeSupplier setAttributes() {
         return Monster.createMonsterAttributes()
-                .add(Attributes.MAX_HEALTH, 2.0D)
+                .add(Attributes.MAX_HEALTH, 200.0D)
                 .add(Attributes.ATTACK_DAMAGE, 20.0D)
                 .add(Attributes.ATTACK_SPEED, 0.40F)
                 .add(Attributes.MOVEMENT_SPEED, 1.0F)
@@ -98,6 +97,7 @@ public class PureTitanLankyEntity extends Monster implements IAnimatable {
         }
         this.entityData.set(DATA_FLAGS_ID, b0);
     }
+
     private <E extends IAnimatable> PlayState predicate(AnimationEvent<E> event) {
         if (event.isMoving()) {
             event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.puretitanlanky.walk", true));
