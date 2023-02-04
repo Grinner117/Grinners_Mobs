@@ -48,7 +48,7 @@ public class PureTitanVillagerEntity extends Monster implements IAnimatable {
         return Monster.createMonsterAttributes()
                 .add(Attributes.MAX_HEALTH, 215.0D)
                 .add(Attributes.ATTACK_DAMAGE, 17.0D)
-                .add(Attributes.ATTACK_SPEED, 0.25F)
+                .add(Attributes.ATTACK_SPEED, 1.25F)
                 .add(Attributes.MOVEMENT_SPEED, 1.0F)
                 .add(Attributes.SPAWN_REINFORCEMENTS_CHANCE, 2.0F)
                 .add(Attributes.JUMP_STRENGTH, 10.0F)

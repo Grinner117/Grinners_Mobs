@@ -46,7 +46,7 @@ public class PureTitanLankyEntity extends Monster implements IAnimatable {
         return Monster.createMonsterAttributes()
                 .add(Attributes.MAX_HEALTH, 200.0D)
                 .add(Attributes.ATTACK_DAMAGE, 20.0D)
-                .add(Attributes.ATTACK_SPEED, 0.40F)
+                .add(Attributes.ATTACK_SPEED, 1.0F)
                 .add(Attributes.MOVEMENT_SPEED, 1.0F)
                 .add(Attributes.SPAWN_REINFORCEMENTS_CHANCE, 2.0F)
                 .add(Attributes.JUMP_STRENGTH, 10.0F)
@@ -54,7 +54,6 @@ public class PureTitanLankyEntity extends Monster implements IAnimatable {
                 .add(Attributes.KNOCKBACK_RESISTANCE, 8.0D)
                 .add(Attributes.ATTACK_KNOCKBACK, 2.0D).build();
     }
-
     @Override
     protected void registerGoals() {
         this.goalSelector.addGoal(3, new MeleeAttackGoal(this, 0.25F, false));
@@ -64,6 +63,7 @@ public class PureTitanLankyEntity extends Monster implements IAnimatable {
     }
 
     protected PathNavigation createNavigation(Level p_33802_) {
+
         return new WallClimberNavigation(this, p_33802_);
     }
 
@@ -79,7 +79,6 @@ public class PureTitanLankyEntity extends Monster implements IAnimatable {
         }
 
     }
-
     public boolean onClimbable() {
         return this.isClimbing();
     }

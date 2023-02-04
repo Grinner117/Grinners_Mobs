@@ -3,6 +3,7 @@ package net.grinner117.grinnersmobs.item;
 import net.grinner117.grinnersmobs.GrinnersMobs;
 import net.grinner117.grinnersmobs.base.ModArmorMaterial;
 import net.grinner117.grinnersmobs.entity.ModEntityTypes;
+import net.grinner117.grinnersmobs.entity.custom.SpikeProjectileEntity;
 import net.grinner117.grinnersmobs.perks.DamageRes2_Perk;
 import net.grinner117.grinnersmobs.perks.Jump2_Perk;
 import net.grinner117.grinnersmobs.perks.Nightvison_Perk;
@@ -11,12 +12,12 @@ import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.projectile.AbstractArrow;
 import net.minecraft.world.food.FoodProperties;
-import net.minecraft.world.item.ArmorItem;
-import net.minecraft.world.item.ArmorMaterial;
-import net.minecraft.world.item.CreativeModeTab;
-import net.minecraft.world.item.Item;
+import net.minecraft.world.item.*;
 import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.world.level.Level;
 import net.minecraftforge.common.ForgeSpawnEggItem;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
@@ -27,10 +28,13 @@ public class ModItems {
     public static final DeferredRegister<Item> ITEMS =
             DeferredRegister.create(ForgeRegistries.ITEMS, GrinnersMobs.MODID);
     public static final RegistryObject<Item> PURETITANVILLAGER_SPAWN_EGG = ITEMS.register("puretitanvillager_spawn_egg",
-            () -> new ForgeSpawnEggItem(ModEntityTypes.PURETITANVILLAGER, 0x22b341, 0x19732e,
+            () -> new ForgeSpawnEggItem(ModEntityTypes.PURETITANVILLAGER, 0x27b341, 0x19732e,
                     new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
     public static final RegistryObject<Item> PURETITANLANKY_SPAWN_EGG = ITEMS.register("puretitanlanky_spawn_egg",
             () -> new ForgeSpawnEggItem(ModEntityTypes.PURETITANLANKY, 0x22b541, 0x19732e,
+                    new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
+    public static final RegistryObject<Item> DEATHSPIKE_SPAWN_EGG = ITEMS.register("deathspike_spawn_egg",
+            () -> new ForgeSpawnEggItem(ModEntityTypes.DEATHSPIKE, 0x52b541, 0xFF732e,
                     new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
 
     public static final RegistryObject<Item> MONSTERFLESH = ITEMS.register("monsterflesh",
@@ -45,7 +49,9 @@ public class ModItems {
     public static final RegistryObject<Item> MONSTERLEATHER = ITEMS.register("monsterleather",
             () -> new Item(new Item.Properties().tab(ModCreativeModeTab.GRINNERSTAB)));
 
-    
+    // in ItemInit.java
+    public static final RegistryObject<Item> SPIKEPROJECTILE = ITEMS.register("spikeprojectile",
+            () -> new SpikeProjectileItem(new Item.Properties().tab(ModCreativeModeTab.GRINNERSTAB)));
     public static final RegistryObject<ArmorItem> LIGHTMONSTERBONEARMOR_HELMET = ITEMS.register("lightmonsterbonearmor_helmet",
             () -> new Nightvison_Perk(ArmorTiers.LIGHTMONSTERBONEARMOR, EquipmentSlot.HEAD, props()));
     public static final RegistryObject<ArmorItem> LIGHTMONSTERBONEARMOR_CHESTPLATE = ITEMS.register("lightmonsterbonearmor_chestplate",
