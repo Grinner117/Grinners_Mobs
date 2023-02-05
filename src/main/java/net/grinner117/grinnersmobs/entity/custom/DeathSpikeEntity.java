@@ -39,16 +39,14 @@ public class DeathSpikeEntity extends Monster implements IAnimatable {
     public DeathSpikeEntity(EntityType<? extends Monster> p_32725_, Level p_32726_) {
         super(p_32725_, p_32726_);
         this.xpReward = 500;
-        this.addEffect(new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 200000, 3));
-        this.addEffect(new MobEffectInstance(MobEffects.WATER_BREATHING, 200000, 2));
-
-    }
-    protected boolean shouldDespawnInPeaceful() {
+           }
+    public boolean isOnFire() {
         return false;
     }
-    public static AttributeSupplier setAttributes() {
+
+       public static AttributeSupplier setAttributes() {
         return Monster.createMonsterAttributes()
-                .add(Attributes.MAX_HEALTH, 300.0D)
+                .add(Attributes.MAX_HEALTH, 200.0D)
                 .add(Attributes.ATTACK_DAMAGE, 10.0D)
                 .add(Attributes.ATTACK_SPEED, 5.0F)
                 .add(Attributes.MOVEMENT_SPEED, 0.001F)
@@ -58,6 +56,7 @@ public class DeathSpikeEntity extends Monster implements IAnimatable {
                 .add(Attributes.ARMOR, 8.0D).build();
 
     }
+
     protected void registerGoals() {
         this.goalSelector.addGoal(1, new AvoidEntityGoal<>(this, Player.class, 0.25F, 0.5D, 0.5D));
         this.goalSelector.addGoal(4, new AvoidEntityGoal<>(this, PureTitanVillagerEntity.class, 6.0F, 1.0D, 1.2D));
@@ -86,9 +85,11 @@ public class DeathSpikeEntity extends Monster implements IAnimatable {
     public SoundSource getSoundSource() {
         return SoundSource.MASTER;
     }
+
     protected void playStepSound(BlockPos p_34316_, BlockState p_34317_) {
         this.playSound(SoundEvents.WOLF_STEP, 1.5F, 1.5F);
     }
+
     protected SoundEvent getAmbientSound() {
         return SoundEvents.WOLF_GROWL;
     }
@@ -100,12 +101,11 @@ public class DeathSpikeEntity extends Monster implements IAnimatable {
     protected SoundEvent getStepSound() {
         return SoundEvents.WOLF_STEP;
     }
+
     protected float getSoundVolume() {
         return 5.0F;
     }
-    public int getMaxSpawnClusterSize() {
-        return 4;
-    }
+
     private <E extends IAnimatable> PlayState predicate(AnimationEvent<E> event) {
         if (event.isMoving()) {
             event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.deathspike.walk", true));
@@ -131,7 +131,6 @@ public class DeathSpikeEntity extends Monster implements IAnimatable {
         data.addAnimationController(new AnimationController(this, "attackController",
                 0, this::attackPredicate));
     }
-
     @Override
     public AnimationFactory getFactory() {
         return manager;

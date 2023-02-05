@@ -1,0 +1,18 @@
+{
+  "type": "forge:add_spawns",
+  "biomes": [
+    "minecraft:wooded_badlands",
+    "minecraft:swamp",
+    "minecraft:basalt_deltas",
+    "minecraft:badlands",
+    "minecraft:crimson_forest",
+    "minecraft:warped_forest",
+    "minecraft:nether_wastes"
+  ],
+  "spawners": {
+    "type": "grinnersmobs:deathspike",
+    "weight": 20,
+    "minCount": 2,
+    "maxCount": 6
+  }
+}

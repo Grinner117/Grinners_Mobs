@@ -40,8 +40,6 @@ public class PureTitanLankyEntity extends Monster implements IAnimatable {
     public PureTitanLankyEntity(EntityType<? extends Monster> EntityType, Level Level) {
         super(EntityType, Level);
         this.xpReward = 300;
-        this.addEffect(new MobEffectInstance(MobEffects.WATER_BREATHING, 200000, 2));
-
     }
 
     private static final EntityDataAccessor<Byte> DATA_FLAGS_ID = SynchedEntityData.defineId(Spider.class, EntityDataSerializers.BYTE);
