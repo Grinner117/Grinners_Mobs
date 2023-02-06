@@ -1,4 +1,22 @@
 {
   "item.grinnersmobs.puretitanvillager_spawn_egg": "Pure Titan Villager Spawn Egg",
-  "entity.grinnersmobs.puretitanvillager": "Pure Titan"
+  "item.grinnersmobs.puretitanlanky_spawn_egg": "Pure Titan Lanky Spawn Egg",
+  "item.grinnersmobs.deathspike_spawn_egg": "Death Spike Spawn Egg",
+
+  "entity.grinnersmobs.puretitanvillager": "Pure Titan",
+  "entity.grinnersmobs.puretitanlanky": "Pure Titan",
+  "entity.grinnersmobs.deathspike": "Death Spike",
+
+
+  "itemGroup.grinnerstab": "Grinner's Mobs",
+
+  "item.grinnersmobs.monsterflesh": "Monster Flesh",
+  "item.grinnersmobs.monsterbone": "Monster Bone",
+  "item.grinnersmobs.monsterleather": "Monster Leather",
+  "item.grinnersmobs.spikeprojectile": "Spike",
+
+  "item.grinnersmobs.lightmonsterbonearmor_helmet": "Light Monster Bone Helmet ",
+  "item.grinnersmobs.lightmonsterbonearmor_chestplate": "Light Monster Bone Chestplate ",
+  "item.grinnersmobs.lightmonsterbonearmor_leggings": "Light Monster Bone Leggings",
+  "item.grinnersmobs.lightmonsterbonearmor_boots": "Light Monster Bone Boots"
 }

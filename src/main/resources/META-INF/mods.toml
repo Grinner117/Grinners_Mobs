@@ -29,7 +29,7 @@ displayName="Grinner's Mobs" #mandatory
 # A file name (in the root of the mod JAR) containing a logo for display
 logoFile="examplemod.png" #optional
 # A text field displayed in the mod UI
-credits="Thanks for this example mod goes to Java" #optional
+credits="To my dearest friend, whom without none of this would even be possible" #optional
 # A text field displayed in the mod UI
 authors="Grinner117" #optional
 # Display Test controls the display for your mod in the server connection screen
@@ -42,10 +42,13 @@ authors="Grinner117" #optional
 
 # The description text for the mod (multi line!) (#mandatory)
 description='''
-Introducing the Pure Titan mod for Minecraft 1.19.2! This mod adds a new, formidable mob to the game, the Pure Titan.
-Spawning in old forests, these massive creatures are inspired by the Titans from the popular anime and manga series Attack on Titans.
-With their towering height and immense strength, the Pure Titans will provide a challenging new threat for players to contend with.
-But be warned, taking one of these beasts down will not be easy. Good luck, and happy hunting!
+Experience the danger of the Nether with the Grinner's Mobs mod for Minecraft 1.19.2! This mod introduces two fearsome new mobs to the game, the Death Spike and the Pure Titan.
+
+The Death Spike can be found in the treacherous biomes of the Wooded Badlands, Swamps, Basalt Deltas, Badlands, Crimson Forests, Warped Forests, and Nether Wastes. With its deep red fur and massive thorn tail, this creature is extremely aggressive and should be approached with caution.
+
+The Pure Titan, on the other hand, is a massive and formidable creature that spawns in old forests. Inspired by the Titans from the anime Attack on Titans, these massive beasts will provide a challenging new threat for players to contend with.
+
+Both of these Grinner's Mobs are not for the faint of heart, but those brave enough to take them on will be rewarded with an unforgettable gaming experience. So gear up, and get ready to face the dangers of the Grinner!
 '''
 # A dependency - use the . to indicate dependency for a specific modid. Dependencies are optional.
 [[dependencies.grinnersmobs]] #optional

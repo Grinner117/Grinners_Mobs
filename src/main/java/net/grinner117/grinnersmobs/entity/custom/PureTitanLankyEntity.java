@@ -27,13 +27,11 @@ import software.bernie.geckolib.core.animation.*;
 import software.bernie.geckolib.core.object.PlayState;
 
 
-public class PureTitanVillagerEntity extends Monster implements GeoEntity {
+public class PureTitanLankyEntity extends Monster implements GeoEntity {
 
-    private static final float KNOCKBACK_RESISTANCE = 1.0F;
-    private static final float ATTACK_KNOCKBACK = 1.5F;
     private AnimatableInstanceCache factory = new SingletonAnimatableInstanceCache(this);
 
-    public PureTitanVillagerEntity(EntityType<? extends Monster> EntityType, Level Level) {
+    public PureTitanLankyEntity(EntityType<? extends Monster> EntityType, Level Level) {
         super(EntityType, Level);
         this.xpReward = 300;
     }
@@ -42,27 +40,26 @@ public class PureTitanVillagerEntity extends Monster implements GeoEntity {
 
     public static AttributeSupplier setAttributes() {
         return Monster.createMonsterAttributes()
-                .add(Attributes.MAX_HEALTH, 215.0D)
-                .add(Attributes.ATTACK_DAMAGE, 17.0D)
-                .add(Attributes.ATTACK_SPEED, 1.25F)
+                .add(Attributes.MAX_HEALTH, 200.0D)
+                .add(Attributes.ATTACK_DAMAGE, 20.0D)
+                .add(Attributes.ATTACK_SPEED, 1.0F)
                 .add(Attributes.MOVEMENT_SPEED, 1.0F)
                 .add(Attributes.SPAWN_REINFORCEMENTS_CHANCE, 2.0F)
                 .add(Attributes.JUMP_STRENGTH, 10.0F)
                 .add(Attributes.FOLLOW_RANGE, 64.0D)
                 .add(Attributes.KNOCKBACK_RESISTANCE, 8.0D)
-                .add(Attributes.ATTACK_KNOCKBACK, 3.0D).build();
-
+                .add(Attributes.ATTACK_KNOCKBACK, 2.0D).build();
     }
-
     @Override
     protected void registerGoals() {
-        this.goalSelector.addGoal(3, new MeleeAttackGoal(this, 0.20F, false));
+        this.goalSelector.addGoal(3, new MeleeAttackGoal(this, 0.25F, false));
         this.goalSelector.addGoal(4, new LookAtPlayerGoal(this, Player.class, 128.0F));
         this.targetSelector.addGoal(1, new NearestAttackableTargetGoal<>(this, Player.class, true));
         this.targetSelector.addGoal(2, new NearestAttackableTargetGoal<>(this, AbstractVillager.class, false));
     }
 
     protected PathNavigation createNavigation(Level p_33802_) {
+
         return new WallClimberNavigation(this, p_33802_);
     }
 
@@ -78,7 +75,6 @@ public class PureTitanVillagerEntity extends Monster implements GeoEntity {
         }
 
     }
-
     public boolean onClimbable() {
         return this.isClimbing();
     }
@@ -94,24 +90,23 @@ public class PureTitanVillagerEntity extends Monster implements GeoEntity {
         } else {
             b0 = (byte) (b0 & -2);
         }
-
         this.entityData.set(DATA_FLAGS_ID, b0);
     }
 
     private PlayState predicate(AnimationState animationState) {
         if(animationState.isMoving()) {
-            animationState.getController().setAnimation(RawAnimation.begin().then("animation.puretitanvillager.walk", Animation.LoopType.LOOP));
+            animationState.getController().setAnimation(RawAnimation.begin().then("animation.puretitanlanky.walk", Animation.LoopType.LOOP));
             return PlayState.CONTINUE;
         }
 
-        animationState.getController().setAnimation(RawAnimation.begin().then("animation.puretitanvillager.idle", Animation.LoopType.LOOP));
+        animationState.getController().setAnimation(RawAnimation.begin().then("animation.puretitanlanky.idle", Animation.LoopType.LOOP));
         return PlayState.CONTINUE;
     }
 
     private PlayState attackPredicate(AnimationState state) {
         if(this.swinging && state.getController().getAnimationState().equals(AnimationController.State.STOPPED)) {
             state.getController().forceAnimationReset();
-            state.getController().setAnimation(RawAnimation.begin().then("animation.puretitanvillager.attack", Animation.LoopType.PLAY_ONCE));
+            state.getController().setAnimation(RawAnimation.begin().then("animation.puretitanlanky.attack", Animation.LoopType.PLAY_ONCE));
             this.swinging = false;
         }
 
@@ -132,21 +127,22 @@ public class PureTitanVillagerEntity extends Monster implements GeoEntity {
     }
 
     protected void playStepSound(BlockPos p_34316_, BlockState p_34317_) {
-        this.playSound(SoundEvents.GRAVEL_BREAK, 4.0F, 0.01F);
+        this.playSound(SoundEvents.SNOW_BREAK, 4.0F, 0.05F);
     }
+
     protected SoundEvent getAmbientSound() {
-        return SoundEvents.VILLAGER_AMBIENT;
+        return SoundEvents.GHAST_AMBIENT;
     }
 
     protected SoundEvent getDeathSound() {
-        return SoundEvents.ENDERMAN_DEATH;
+        return SoundEvents.GHAST_DEATH;
     }
 
     protected SoundEvent getStepSound() {
-        return SoundEvents.GRAVEL_BREAK;
+        return SoundEvents.SNOW_BREAK;
     }
 
     protected float getSoundVolume() {
-        return 15.0F;
+        return 12.0F;
     }
 }
