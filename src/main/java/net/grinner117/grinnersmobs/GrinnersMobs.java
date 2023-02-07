@@ -2,10 +2,9 @@ package net.grinner117.grinnersmobs;
 
 import net.grinner117.grinnersmobs.entity.ModEntityTypes;
 import net.grinner117.grinnersmobs.entity.client.DeathSpikeRenderer;
-import net.grinner117.grinnersmobs.entity.client.PureTitanVillagerRenderer;
 import net.grinner117.grinnersmobs.entity.client.PureTitanLankyRenderer;
+import net.grinner117.grinnersmobs.entity.client.PureTitanVillagerRenderer;
 import net.grinner117.grinnersmobs.entity.client.SpikeProjectileRenderer;
-import net.grinner117.grinnersmobs.entity.custom.SpikeProjectileEntity;
 import net.grinner117.grinnersmobs.item.ModItems;
 import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.world.entity.SpawnPlacements;
