@@ -113,7 +113,6 @@ public class PureTitanLankyEntity extends Monster implements GeoEntity {
         return PlayState.CONTINUE;
     }
 
-
     @Override
     public void registerControllers(AnimatableManager.ControllerRegistrar controllers) {
         controllers.add(new AnimationController(this, "controller",

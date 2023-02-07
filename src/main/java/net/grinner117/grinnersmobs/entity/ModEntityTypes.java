@@ -31,7 +31,7 @@ public class ModEntityTypes {
     public static final RegistryObject<EntityType<DeathSpikeEntity>> DEATHSPIKE =
             ENTITY_TYPES.register("deathspike",
                     () -> EntityType.Builder.of(DeathSpikeEntity::new, MobCategory.MONSTER)
-                            .sized(2.0F, 1.0F).clientTrackingRange(50)
+                            .sized(2.0F, 2.0F).clientTrackingRange(50)
                             .build(new ResourceLocation(GrinnersMobs.MODID,"deathspike").toString()));
 
     public static void register(IEventBus eventBus) {

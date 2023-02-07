@@ -10,7 +10,6 @@ public class DeathSpikeModel extends GeoModel<DeathSpikeEntity> {
    public ResourceLocation getModelResource(DeathSpikeEntity object) {
         return new ResourceLocation(GrinnersMobs.MODID, "geo/deathspike.geo.json");
     }
-
     @Override
     public ResourceLocation getTextureResource(DeathSpikeEntity object) {
         return new ResourceLocation(GrinnersMobs.MODID, "textures/entity/deathspike.png");
