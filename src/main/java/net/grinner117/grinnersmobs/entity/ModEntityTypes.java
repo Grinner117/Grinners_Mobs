@@ -21,12 +21,12 @@ public class ModEntityTypes {
     public static final RegistryObject<EntityType<PureTitanVillagerEntity>> PURETITANVILLAGER =
             ENTITY_TYPES.register("puretitanvillager",
                     () -> EntityType.Builder.of(PureTitanVillagerEntity::new, MobCategory.MONSTER)
-                            .sized(2.0F, 7.0F).clientTrackingRange(50)
+                            .sized(3.0F, 12.0F).clientTrackingRange(50)
                             .build(new ResourceLocation(GrinnersMobs.MODID,"puretitanvillager").toString()));
     public static final RegistryObject<EntityType<PureTitanLankyEntity>> PURETITANLANKY =
             ENTITY_TYPES.register("puretitanlanky",
                     () -> EntityType.Builder.of(PureTitanLankyEntity::new, MobCategory.MONSTER)
-                            .sized(3.0F, 20.0F).clientTrackingRange(50)
+                            .sized(3.0F, 18.0F).clientTrackingRange(50)
                             .build(new ResourceLocation(GrinnersMobs.MODID,"puretitanlanky").toString()));
     public static final RegistryObject<EntityType<DeathSpikeEntity>> DEATHSPIKE =
             ENTITY_TYPES.register("deathspike",

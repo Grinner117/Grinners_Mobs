@@ -12,7 +12,9 @@ import software.bernie.geckolib.renderer.GeoEntityRenderer;
 public class PureTitanLankyRenderer extends GeoEntityRenderer<PureTitanLankyEntity> {
     public PureTitanLankyRenderer(EntityRendererProvider.Context renderManager) {
         super(renderManager, new PureTitanLankyModel());
-        this.shadowRadius = 2.0f;
+        this.shadowRadius = 2.5f;
+        this.scaleWidth = 7;
+        this.scaleHeight = 7;
     }
     @Override
     public ResourceLocation getTextureLocation(PureTitanLankyEntity instance) {

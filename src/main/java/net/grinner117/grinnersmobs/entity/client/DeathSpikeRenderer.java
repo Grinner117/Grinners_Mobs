@@ -15,6 +15,8 @@ public class DeathSpikeRenderer extends GeoEntityRenderer<DeathSpikeEntity> {
     public DeathSpikeRenderer(EntityRendererProvider.Context renderManager) {
         super(renderManager, new DeathSpikeModel());
         this.shadowRadius = 1.0f;
+        this.scaleWidth = 2;
+        this.scaleHeight = 2;
     }
     @Override
     public ResourceLocation getTextureLocation(DeathSpikeEntity instance) {

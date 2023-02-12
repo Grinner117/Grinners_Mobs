@@ -15,6 +15,8 @@ public class PureTitanVillagerRenderer extends GeoEntityRenderer<PureTitanVillag
     public PureTitanVillagerRenderer(EntityRendererProvider.Context renderManager) {
         super(renderManager, new PureTitanVillagerModel());
         this.shadowRadius = 2.0f;
+        this.scaleWidth = 12;
+        this.scaleHeight = 12;
     }
 
     @Override

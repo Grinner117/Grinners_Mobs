@@ -3,21 +3,14 @@ package net.grinner117.grinnersmobs.item;
 import net.grinner117.grinnersmobs.GrinnersMobs;
 import net.grinner117.grinnersmobs.base.ModArmorMaterial;
 import net.grinner117.grinnersmobs.entity.ModEntityTypes;
-import net.grinner117.grinnersmobs.entity.custom.SpikeProjectileEntity;
-import net.grinner117.grinnersmobs.perks.DamageRes2_Perk;
-import net.grinner117.grinnersmobs.perks.Jump2_Perk;
-import net.grinner117.grinnersmobs.perks.Nightvison_Perk;
-import net.grinner117.grinnersmobs.perks.Speed4_Perk;
+import net.grinner117.grinnersmobs.perks.*;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.EquipmentSlot;
-import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.projectile.AbstractArrow;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.*;
 import net.minecraft.world.item.crafting.Ingredient;
-import net.minecraft.world.level.Level;
 import net.minecraftforge.common.ForgeSpawnEggItem;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
@@ -59,7 +52,17 @@ public class ModItems {
     public static final RegistryObject<ArmorItem> LIGHTMONSTERBONEARMOR_LEGGINGS = ITEMS.register("lightmonsterbonearmor_leggings",
             () -> new Jump2_Perk(ArmorTiers.LIGHTMONSTERBONEARMOR, EquipmentSlot.LEGS, props()));
     public static final RegistryObject<ArmorItem> LIGHTMONSTERBONEARMOR_BOOTS = ITEMS.register("lightmonsterbonearmor_boots",
-            () -> new Speed4_Perk(ArmorTiers.LIGHTMONSTERBONEARMOR, EquipmentSlot.FEET, props()));
+            () -> new Speed3_Perk(ArmorTiers.LIGHTMONSTERBONEARMOR, EquipmentSlot.FEET, props()));
+    public static final RegistryObject<ArmorItem> DEATHSPIKEARMOR_HELMET = ITEMS.register("deathspikearmor_helmet",
+            () -> new Health3_Perk(ArmorTiers.DEATHSPIKEARMOR, EquipmentSlot.HEAD, props()));
+    public static final RegistryObject<ArmorItem> DEATHSPIKEARMOR_CHESTPLATE = ITEMS.register("deathspikearmor_chestplate",
+            () -> new Damage_Perk(ArmorTiers.DEATHSPIKEARMOR, EquipmentSlot.CHEST, props()));
+    public static final RegistryObject<ArmorItem> DEATHSPIKEARMOR_LEGGINGS = ITEMS.register("deathspikearmor_leggings",
+            () -> new DamageRes2_Perk(ArmorTiers.DEATHSPIKEARMOR, EquipmentSlot.LEGS, props()));
+    public static final RegistryObject<ArmorItem> DEATHSPIKEARMOR_BOOTS = ITEMS.register("deathspikearmor_boots",
+            () -> new Speed4_Perk(ArmorTiers.DEATHSPIKEARMOR, EquipmentSlot.FEET, props()));
+
+
 
 private static Item.Properties props(){return new Item.Properties(); }
 
@@ -71,13 +74,23 @@ private static Item.Properties props(){return new Item.Properties(); }
 public static class ArmorTiers{
 public static final ArmorMaterial LIGHTMONSTERBONEARMOR = new ModArmorMaterial(
         "lightmonsterbonearmor",
-        1000,
+        1800,
         new int[]{7,15,12,7},
-        300,
+        200,
         SoundEvents.ARMOR_EQUIP_NETHERITE,
         8.0f, 0.5f,
         () -> Ingredient.of(ModItems.MONSTERLEATHER.get()));
 
+    public static final ArmorMaterial DEATHSPIKEARMOR = new ModArmorMaterial(
+            "deathspikearmor",
+            2000,
+            new int[]{10,16,14,10},
+            300,
+            SoundEvents.ARMOR_EQUIP_CHAIN,
+            12.0f, 0.3f,
+            () -> Ingredient.of(ModItems.SPIKEPROJECTILE.get()));
+
 }
 
 }
+

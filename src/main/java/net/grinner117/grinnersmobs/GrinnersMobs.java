@@ -20,6 +20,7 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import software.bernie.geckolib.GeckoLib;
+import software.bernie.geckolib.renderer.GeoArmorRenderer;
 
 import static net.grinner117.grinnersmobs.GrinnersMobs.MODID;
 
@@ -44,8 +45,8 @@ public class GrinnersMobs {
         MinecraftForge.EVENT_BUS.register(this);
 
         modEventBus.addListener(this::addCreative);
-
     }
+
     private void commonSetup(final FMLCommonSetupEvent event) {
         event.enqueueWork(() -> {
             SpawnPlacements.register(ModEntityTypes.PURETITANVILLAGER.get(),
@@ -65,23 +66,33 @@ public class GrinnersMobs {
             event.accept(ModItems.MONSTERBONE);
             event.accept(ModItems.MONSTERLEATHER);
             event.accept(ModItems.MONSTERFLESH);
+            event.accept(ModItems.SPIKEPROJECTILE);
+
             event.accept(ModItems.LIGHTMONSTERBONEARMOR_BOOTS);
             event.accept(ModItems.LIGHTMONSTERBONEARMOR_CHESTPLATE);
             event.accept(ModItems.LIGHTMONSTERBONEARMOR_HELMET);
             event.accept(ModItems.LIGHTMONSTERBONEARMOR_LEGGINGS);
-            event.accept(ModItems.SPIKEPROJECTILE);
+
+            event.accept(ModItems.DEATHSPIKEARMOR_HELMET);
+            event.accept(ModItems.DEATHSPIKEARMOR_CHESTPLATE);
+            event.accept(ModItems.DEATHSPIKEARMOR_LEGGINGS);
+            event.accept(ModItems.DEATHSPIKEARMOR_BOOTS);
+
+            event.accept(ModItems.DEATHSPIKE_SPAWN_EGG);
+            event.accept(ModItems.PURETITANLANKY_SPAWN_EGG);
+            event.accept(ModItems.PURETITANVILLAGER_SPAWN_EGG);
+
         }
     }
-      //PURETITANVILLAGER
+
     @Mod.EventBusSubscriber(modid = MODID, bus = Mod.EventBusSubscriber.Bus.MOD)
     public static class ClientModEvents {
-          @SubscribeEvent
-          public static void onClientSetup(FMLClientSetupEvent event) {
-              EntityRenderers.register(ModEntityTypes.PURETITANVILLAGER.get(), PureTitanVillagerRenderer::new);
-              EntityRenderers.register(ModEntityTypes.PURETITANLANKY.get(), PureTitanLankyRenderer::new);
-              EntityRenderers.register(ModEntityTypes.DEATHSPIKE.get(), DeathSpikeRenderer::new);
-              EntityRenderers.register(ModEntityTypes.SPIKEPROJECTILE.get(), SpikeProjectileRenderer::new);
-
-          }
-      }
+        @SubscribeEvent
+        public static void onClientSetup(FMLClientSetupEvent event) {
+            EntityRenderers.register(ModEntityTypes.PURETITANVILLAGER.get(), PureTitanVillagerRenderer::new);
+            EntityRenderers.register(ModEntityTypes.PURETITANLANKY.get(), PureTitanLankyRenderer::new);
+            EntityRenderers.register(ModEntityTypes.DEATHSPIKE.get(), DeathSpikeRenderer::new);
+            EntityRenderers.register(ModEntityTypes.SPIKEPROJECTILE.get(), SpikeProjectileRenderer::new);
+        }
     }
+}
