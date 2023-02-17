@@ -18,14 +18,14 @@
   "item.grinnersmobs.lightmonsterbonearmor_helmet": "Light Monster Bone Helmet ",
   "item.grinnersmobs.lightmonsterbonearmor_chestplate": "Light Monster Bone Chestplate ",
   "item.grinnersmobs.lightmonsterbonearmor_leggings": "Light Monster Bone Leggings",
-<<<<<<< HEAD
-  "item.grinnersmobs.lightmonsterbonearmor_boots": "Light Monster Bone Boots"
-=======
+
+  "item.grinnersmobs.lightmonsterbonearmor_boots": "Light Monster Bone Boots",
+
   "item.grinnersmobs.lightmonsterbonearmor_boots": "Light Monster Bone Boots",
 
   "item.grinnersmobs.deathspikearmor_helmet": "Death Spike Mask",
   "item.grinnersmobs.deathspikearmor_chestplate": "Death Spike Chestplate",
   "item.grinnersmobs.deathspikearmor_leggings": "Death Spike Leg Wraps",
   "item.grinnersmobs.deathspikearmor_boots": "Death Spike Boots"
->>>>>>> 1.19.3
+
 }

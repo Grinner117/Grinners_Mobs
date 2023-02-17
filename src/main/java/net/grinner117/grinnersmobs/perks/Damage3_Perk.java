@@ -9,8 +9,8 @@ import net.minecraft.world.item.ArmorMaterial;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 
-public class Damage_Perk extends ArmorItem {
-    public Damage_Perk(ArmorMaterial material, EquipmentSlot slot, Properties properties) {
+public class Damage3_Perk extends ArmorItem {
+    public Damage3_Perk(ArmorMaterial material, EquipmentSlot slot, Properties properties) {
         super(material, slot, properties);
 
     }

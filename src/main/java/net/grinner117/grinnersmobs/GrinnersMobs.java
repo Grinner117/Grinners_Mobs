@@ -2,16 +2,10 @@ package net.grinner117.grinnersmobs;
 
 import net.grinner117.grinnersmobs.entity.ModEntityTypes;
 import net.grinner117.grinnersmobs.entity.client.DeathSpikeRenderer;
-<<<<<<< HEAD
 import net.grinner117.grinnersmobs.entity.client.PureTitanLankyRenderer;
 import net.grinner117.grinnersmobs.entity.client.PureTitanVillagerRenderer;
-import net.grinner117.grinnersmobs.entity.client.SpikeProjectileRenderer;
-=======
-import net.grinner117.grinnersmobs.entity.client.PureTitanVillagerRenderer;
-import net.grinner117.grinnersmobs.entity.client.PureTitanLankyRenderer;
 import net.grinner117.grinnersmobs.entity.client.SpikeProjectileRenderer;
 import net.grinner117.grinnersmobs.item.ModCreativeModeTab;
->>>>>>> 1.19.3
 import net.grinner117.grinnersmobs.item.ModItems;
 import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.world.entity.SpawnPlacements;
@@ -26,7 +20,6 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import software.bernie.geckolib.GeckoLib;
-import software.bernie.geckolib.renderer.GeoArmorRenderer;
 
 import static net.grinner117.grinnersmobs.GrinnersMobs.MODID;
 
@@ -52,7 +45,6 @@ public class GrinnersMobs {
 
         modEventBus.addListener(this::addCreative);
     }
-
     private void commonSetup(final FMLCommonSetupEvent event) {
         event.enqueueWork(() -> {
             SpawnPlacements.register(ModEntityTypes.PURETITANVILLAGER.get(),
@@ -61,11 +53,6 @@ public class GrinnersMobs {
             SpawnPlacements.register(ModEntityTypes.PURETITANLANKY.get(),
                     SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
                     Monster::checkMonsterSpawnRules);
-<<<<<<< HEAD
-        });
-    }
-      //PURETITANVILLAGER
-=======
             SpawnPlacements.register(ModEntityTypes.DEATHSPIKE.get(),
                     SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
                     Monster::checkMonsterSpawnRules);
@@ -92,11 +79,8 @@ public class GrinnersMobs {
             event.accept(ModItems.DEATHSPIKE_SPAWN_EGG);
             event.accept(ModItems.PURETITANLANKY_SPAWN_EGG);
             event.accept(ModItems.PURETITANVILLAGER_SPAWN_EGG);
-
         }
     }
-
->>>>>>> 1.19.3
     @Mod.EventBusSubscriber(modid = MODID, bus = Mod.EventBusSubscriber.Bus.MOD)
     public static class ClientModEvents {
         @SubscribeEvent
@@ -105,10 +89,6 @@ public class GrinnersMobs {
             EntityRenderers.register(ModEntityTypes.PURETITANLANKY.get(), PureTitanLankyRenderer::new);
             EntityRenderers.register(ModEntityTypes.DEATHSPIKE.get(), DeathSpikeRenderer::new);
             EntityRenderers.register(ModEntityTypes.SPIKEPROJECTILE.get(), SpikeProjectileRenderer::new);
-<<<<<<< HEAD
-
-=======
->>>>>>> 1.19.3
         }
     }
 }

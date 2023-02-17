@@ -26,20 +26,12 @@ public class ModEntityTypes {
     public static final RegistryObject<EntityType<PureTitanLankyEntity>> PURETITANLANKY =
             ENTITY_TYPES.register("puretitanlanky",
                     () -> EntityType.Builder.of(PureTitanLankyEntity::new, MobCategory.MONSTER)
-<<<<<<< HEAD
                             .sized(3.0F, 20.0F).clientTrackingRange(50)
-=======
-                            .sized(3.0F, 18.0F).clientTrackingRange(50)
->>>>>>> 1.19.3
                             .build(new ResourceLocation(GrinnersMobs.MODID,"puretitanlanky").toString()));
     public static final RegistryObject<EntityType<DeathSpikeEntity>> DEATHSPIKE =
             ENTITY_TYPES.register("deathspike",
                     () -> EntityType.Builder.of(DeathSpikeEntity::new, MobCategory.MONSTER)
-<<<<<<< HEAD
-                            .sized(2.0F, 1.0F).clientTrackingRange(50)
-=======
                             .sized(2.0F, 2.0F).clientTrackingRange(50)
->>>>>>> 1.19.3
                             .build(new ResourceLocation(GrinnersMobs.MODID,"deathspike").toString()));
 
     public static void register(IEventBus eventBus) {

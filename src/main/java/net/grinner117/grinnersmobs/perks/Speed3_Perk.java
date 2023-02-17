@@ -17,7 +17,6 @@ public class Speed3_Perk extends ArmorItem {
         super(material, slot, properties);
 
     }
-
     @Override
     public void onArmorTick(ItemStack stack, Level world, Player player) {
         if (!world.isClientSide()) {

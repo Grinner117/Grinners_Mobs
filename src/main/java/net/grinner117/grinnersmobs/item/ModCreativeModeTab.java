@@ -1,18 +1,6 @@
 package net.grinner117.grinnersmobs.item;
 
-<<<<<<< HEAD
-import net.minecraft.world.item.CreativeModeTab;
-import net.minecraft.world.item.ItemStack;
 
-public class ModCreativeModeTab {
-    public static final CreativeModeTab GRINNERSTAB = new CreativeModeTab("grinnerstab") {
-        @Override
-        public ItemStack makeIcon () {
-            return new ItemStack(ModItems.MONSTERBONE.get());
-        }
-    };
-}
-=======
 import net.grinner117.grinnersmobs.GrinnersMobs;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
@@ -30,8 +18,7 @@ public class ModCreativeModeTab {
 
     GRINNERSTAB = event.registerCreativeModeTab(new ResourceLocation(GrinnersMobs.MODID, "grinnerstab"),
             builder -> builder.icon(() -> new ItemStack(ModItems.MONSTERBONE.get()))
-                    .title(Component.literal("Grinner's Tab"))
+                    .title(Component.translatable("creativemodtab.grinnerstab"))
                 .build());
     }
 }
->>>>>>> 1.19.3
