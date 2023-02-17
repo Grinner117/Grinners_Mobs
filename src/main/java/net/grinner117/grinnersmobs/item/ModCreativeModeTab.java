@@ -18,7 +18,7 @@ public class ModCreativeModeTab {
 
     GRINNERSTAB = event.registerCreativeModeTab(new ResourceLocation(GrinnersMobs.MODID, "grinnerstab"),
             builder -> builder.icon(() -> new ItemStack(ModItems.MONSTERBONE.get()))
-                    .title(Component.translatable("creativemodtab.grinnerstab"))
+                    .title(Component.translatable("Grinner's Mobs"))
                 .build());
     }
 }
