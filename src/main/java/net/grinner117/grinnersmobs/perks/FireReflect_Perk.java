@@ -18,9 +18,13 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 public class FireReflect_Perk extends ArmorItem implements IDamageHandlingArmor{
     public FireReflect_Perk(ArmorMaterial material, EquipmentSlot slot, Properties properties) {
         super(material, slot, properties);
+<<<<<<< HEAD
 
     }
 
+=======
+    }
+>>>>>>> 1.19.3
     @Override
     public void onArmorTick(ItemStack stack, Level world, Player player) {
         if (!world.isClientSide()) {

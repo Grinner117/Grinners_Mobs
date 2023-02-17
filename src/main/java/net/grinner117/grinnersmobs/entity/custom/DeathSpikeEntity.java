@@ -23,6 +23,7 @@ import net.minecraft.world.entity.monster.piglin.PiglinBrute;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
+<<<<<<< HEAD
 import software.bernie.geckolib3.core.AnimationState;
 import software.bernie.geckolib3.core.IAnimatable;
 import software.bernie.geckolib3.core.PlayState;
@@ -35,6 +36,16 @@ import software.bernie.geckolib3.util.GeckoLibUtil;
 
 public class DeathSpikeEntity extends Monster implements IAnimatable {
     AnimationFactory manager = GeckoLibUtil.createFactory(this);
+=======
+import software.bernie.geckolib.animatable.GeoEntity;
+import software.bernie.geckolib.core.animatable.instance.AnimatableInstanceCache;
+import software.bernie.geckolib.core.animatable.instance.SingletonAnimatableInstanceCache;
+import software.bernie.geckolib.core.animation.*;
+import software.bernie.geckolib.core.object.PlayState;
+
+public class DeathSpikeEntity extends Monster implements GeoEntity {
+  private AnimatableInstanceCache factory = new SingletonAnimatableInstanceCache(this);
+>>>>>>> 1.19.3
 
     public DeathSpikeEntity(EntityType<? extends Monster> p_32725_, Level p_32726_) {
         super(p_32725_, p_32726_);
@@ -106,6 +117,7 @@ public class DeathSpikeEntity extends Monster implements IAnimatable {
         return 5.0F;
     }
 
+<<<<<<< HEAD
     private <E extends IAnimatable> PlayState predicate(AnimationEvent<E> event) {
         if (event.isMoving()) {
             event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.deathspike.walk", true));
@@ -119,12 +131,29 @@ public class DeathSpikeEntity extends Monster implements IAnimatable {
         if (this.swinging && event.getController().getAnimationState().equals(AnimationState.Stopped)) {
             event.getController().markNeedsReload();
             event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.deathspike.attack", false));
+=======
+    private PlayState predicate(AnimationState animationState) {
+        if (animationState.isMoving()) {
+            animationState.getController().setAnimation(RawAnimation.begin().then("animation.deathspike.walk", Animation.LoopType.LOOP));
+            return PlayState.CONTINUE;
+        }
+        animationState.getController().setAnimation(RawAnimation.begin().then("animation.deathspike.idle", Animation.LoopType.LOOP));
+        return PlayState.CONTINUE;
+    }
+
+    private PlayState attackPredicate(AnimationState state) {
+        if (this.swinging && state.getController().getAnimationState().equals(AnimationController.State.STOPPED)) {
+            state.getController().forceAnimationReset();
+            state.getController().setAnimation(RawAnimation.begin()
+                    .then("animation.deathspike.attack", Animation.LoopType.PLAY_ONCE));
+>>>>>>> 1.19.3
             this.swinging = false;
         }
         return PlayState.CONTINUE;
     }
 
     @Override
+<<<<<<< HEAD
     public void registerControllers(AnimationData data) {
         data.addAnimationController(new AnimationController(this, "controller",
                 0, this::predicate));
@@ -137,4 +166,16 @@ public class DeathSpikeEntity extends Monster implements IAnimatable {
     }
 
 
+=======
+    public void registerControllers(AnimatableManager.ControllerRegistrar controllers) {
+        controllers.add(new AnimationController(this, "controller",
+                0, this::predicate));
+        controllers.add(new AnimationController(this, "attackController",
+                0, this::attackPredicate));
+    }
+    @Override
+    public AnimatableInstanceCache getAnimatableInstanceCache() {
+        return factory;
+    }
+>>>>>>> 1.19.3
 }

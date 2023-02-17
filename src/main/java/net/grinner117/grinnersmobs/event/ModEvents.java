@@ -18,7 +18,10 @@ public class ModEvents {
             event.put(ModEntityTypes.DEATHSPIKE.get(), PureTitanLankyEntity.setAttributes());
         }
     }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 1.19.3
     @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.FORGE)
     public class ArmorHandlers {
 

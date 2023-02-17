@@ -3,9 +3,15 @@ package net.grinner117.grinnersmobs.entity.client;
 import net.grinner117.grinnersmobs.GrinnersMobs;
 import net.grinner117.grinnersmobs.entity.custom.PureTitanLankyEntity;
 import net.minecraft.resources.ResourceLocation;
+<<<<<<< HEAD
 import software.bernie.geckolib3.model.AnimatedGeoModel;
 
 public class PureTitanLankyModel extends AnimatedGeoModel<PureTitanLankyEntity> {
+=======
+import software.bernie.geckolib.model.GeoModel;
+
+public class PureTitanLankyModel extends GeoModel<PureTitanLankyEntity> {
+>>>>>>> 1.19.3
     @Override
     public ResourceLocation getModelResource(PureTitanLankyEntity object) {
         return new ResourceLocation(GrinnersMobs.MODID, "geo/puretitanlanky.geo.json");

@@ -17,7 +17,10 @@ public record ModArmorMaterial(String name, int durablity, int[] protection, int
     public int getDurabilityForSlot(EquipmentSlot slot) {
         return DURABLILITY_PER_SLOT[slot.getIndex()]= this.durablity;
     }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 1.19.3
     @Override
     public int getDefenseForSlot(EquipmentSlot slot) {
         return this.protection[slot.getIndex()];
