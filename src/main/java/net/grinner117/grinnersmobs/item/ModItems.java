@@ -64,7 +64,7 @@ public class ModItems {
     public static final RegistryObject<ArmorItem> DEATHSPIKEARMOR_LEGGINGS = ITEMS.register("deathspikearmor_leggings",
             () -> new DamageRes2_Perk(ArmorTiers.DEATHSPIKEARMOR, EquipmentSlot.LEGS, props()));
     public static final RegistryObject<ArmorItem> DEATHSPIKEARMOR_BOOTS = ITEMS.register("deathspikearmor_boots",
-            () -> new Speed4_Perk(ArmorTiers.DEATHSPIKEARMOR, EquipmentSlot.FEET, props()));
+            () -> new Speed3_Perk(ArmorTiers.DEATHSPIKEARMOR, EquipmentSlot.FEET, props()));
 
 
 
