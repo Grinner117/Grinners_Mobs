@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "grinnersmobs:monsterfurtuft"
+    }
+  ],
+  "result": {
+    "count": 2,
+    "item": "grinnersmobs:monsterfabric"
+  }
+}

@@ -33,9 +33,9 @@ import software.bernie.geckolib.core.object.PlayState;
 public class DeathSpikeEntity extends Monster implements GeoEntity {
     private AnimatableInstanceCache factory = new SingletonAnimatableInstanceCache(this);
 
-    public DeathSpikeEntity(EntityType<? extends Monster> p_32725_, Level p_32726_) {
-        super(p_32725_, p_32726_);
-        this.xpReward = 500;
+    public DeathSpikeEntity(EntityType<? extends Monster> EntityType, Level Level) {
+        super(EntityType, Level);
+        this.xpReward = 400;
     }
 
     public boolean isOnFire() {
@@ -47,23 +47,23 @@ public class DeathSpikeEntity extends Monster implements GeoEntity {
                 .add(Attributes.MAX_HEALTH, 200.0D)
                 .add(Attributes.ATTACK_DAMAGE, 10.0D)
                 .add(Attributes.ATTACK_SPEED, 5.0F)
-                .add(Attributes.MOVEMENT_SPEED, 0.001F)
+                .add(Attributes.MOVEMENT_SPEED, 1.0F)
                 .add(Attributes.FOLLOW_RANGE, 164.0D)
                 .add(Attributes.ATTACK_KNOCKBACK, 2.0D)
                 .add(Attributes.ARMOR_TOUGHNESS, 8.0D)
                 .add(Attributes.ARMOR, 8.0D).build();
-
     }
 
+    @Override
     protected void registerGoals() {
         this.goalSelector.addGoal(1, new AvoidEntityGoal<>(this, Player.class, 0.25F, 0.5D, 0.5D));
         this.goalSelector.addGoal(4, new AvoidEntityGoal<>(this, PureTitanVillagerEntity.class, 6.0F, 1.0D, 1.2D));
         this.goalSelector.addGoal(4, new AvoidEntityGoal<>(this, PureTitanLankyEntity.class, 6.0F, 1.0D, 1.2D));
-        this.goalSelector.addGoal(2, new MeleeAttackGoal(this, 0.4F, true));
-        this.goalSelector.addGoal(3, new WaterAvoidingRandomStrollGoal(this, 0.7D));
+        this.goalSelector.addGoal(2, new MeleeAttackGoal(this, 0.5F, true));
+        this.goalSelector.addGoal(3, new WaterAvoidingRandomStrollGoal(this, 0.2D));
 
         this.targetSelector.addGoal(1, new NearestAttackableTargetGoal<>(this, Player.class, false));
-        this.targetSelector.addGoal(1, new NearestAttackableTargetGoal<>(this, IronGolem.class, true));
+        this.targetSelector.addGoal(1, new NearestAttackableTargetGoal<>(this, IronGolem.class, false));
         this.targetSelector.addGoal(1, new NearestAttackableTargetGoal<>(this, Skeleton.class, true));
         this.targetSelector.addGoal(1, new NearestAttackableTargetGoal<>(this, Horse.class, true));
         this.targetSelector.addGoal(1, new NearestAttackableTargetGoal<>(this, Chicken.class, true));
@@ -76,7 +76,7 @@ public class DeathSpikeEntity extends Monster implements GeoEntity {
         this.targetSelector.addGoal(2, new NearestAttackableTargetGoal<>(this, WitherBoss.class, true));
         this.targetSelector.addGoal(2, new NearestAttackableTargetGoal<>(this, Rabbit.class, true));
         this.targetSelector.addGoal(2, new NearestAttackableTargetGoal<>(this, Creeper.class, true));
-        this.targetSelector.addGoal(1, new NearestAttackableTargetGoal<>(this, Slime.class, true));
+        this.targetSelector.addGoal(2, new NearestAttackableTargetGoal<>(this, Slime.class, true));
         this.targetSelector.addGoal(2, new NearestAttackableTargetGoal<>(this, Phantom.class, true));
     }
 
@@ -112,27 +112,27 @@ public class DeathSpikeEntity extends Monster implements GeoEntity {
                 0, this::attackPredicate));
     }
 
-            private PlayState predicate (AnimationState animationState){
-                if (animationState.isMoving()) {
-                    animationState.getController().setAnimation(RawAnimation.begin().then("animation.deathspike.walk", Animation.LoopType.LOOP));
-                    return PlayState.CONTINUE;
-                }
-                animationState.getController().setAnimation(RawAnimation.begin().then("animation.deathspike.idle", Animation.LoopType.LOOP));
-                return PlayState.CONTINUE;
-            }
-
-            private PlayState attackPredicate (AnimationState state){
-                if (this.swinging && state.getController().getAnimationState().equals(AnimationController.State.STOPPED)) {
-                    state.getController().forceAnimationReset();
-                    state.getController().setAnimation(RawAnimation.begin()
-                            .then("animation.deathspike.attack", Animation.LoopType.PLAY_ONCE));
-                    this.swinging = false;
-                }
-                return PlayState.CONTINUE;
-            }
-
-            @Override
-            public AnimatableInstanceCache getAnimatableInstanceCache() {
-                return factory;
-            }
+    private PlayState predicate(AnimationState animationState) {
+        if (animationState.isMoving()) {
+            animationState.getController().setAnimation(RawAnimation.begin().then("animation.deathspike.walk", Animation.LoopType.LOOP));
+            return PlayState.CONTINUE;
         }
+        animationState.getController().setAnimation(RawAnimation.begin().then("animation.deathspike.idle", Animation.LoopType.LOOP));
+        return PlayState.CONTINUE;
+    }
+
+    private PlayState attackPredicate(AnimationState state) {
+        if (this.swinging && state.getController().getAnimationState().equals(AnimationController.State.STOPPED)) {
+            state.getController().forceAnimationReset();
+            state.getController().setAnimation(RawAnimation.begin()
+                    .then("animation.deathspike.attack", Animation.LoopType.PLAY_ONCE));
+            this.swinging = false;
+        }
+        return PlayState.CONTINUE;
+    }
+
+    @Override
+    public AnimatableInstanceCache getAnimatableInstanceCache() {
+        return factory;
+    }
+}

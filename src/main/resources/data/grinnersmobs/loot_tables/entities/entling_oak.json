@@ -2,12 +2,12 @@
   "type": "minecraft:entity",
   "pools": [
     {
-      "rolls": 3,
+      "rolls": 6,
       "bonus_rolls": 0,
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "grinnersmobs:spikeprojectile",
+          "name": "minecraft:oak_log",
           "functions": [
             {
               "function": "minecraft:looting_enchant",
@@ -17,8 +17,8 @@
               "function": "minecraft:set_count",
               "count": {
                 "type": "minecraft:uniform",
-                "min": 6,
-                "max": 24
+                "min": 1,
+                "max": 3
               },
               "add": false
             }
@@ -26,32 +26,32 @@
         },
         {
           "type": "minecraft:item",
-          "name": "grinnersmobs:monsterflesh",
+          "name": "grinnersmobs:entlingcore",
           "functions": [
             {
               "function": "minecraft:set_count",
               "count": {
                 "type": "minecraft:uniform",
-                "min": 2,
-                "max": 4
+                "min": 0,
+                "max": 1
               },
               "add": false
             },
             {
               "function": "minecraft:looting_enchant",
-              "count": 2
+              "count": 1
             }
           ]
         },
         {
           "type": "minecraft:item",
-          "name": "grinnersmobs:monsterleather",
+          "name": "minecraft:oak_sapling",
           "functions": [
             {
               "function": "minecraft:set_count",
               "count": {
                 "min": 1,
-                "max": 4
+                "max": 3
               }
             },
             {
@@ -59,22 +59,6 @@
               "count": 5
             }
           ]
-        },{
-        "type": "minecraft:item",
-        "name": "grinnersmobs:monsterfurtuft",
-        "functions": [
-          {
-            "function": "minecraft:set_count",
-            "count": {
-              "min": 2,
-              "max": 6
-            }
-          },
-          {
-            "function": "minecraft:looting_enchant",
-            "count": 3
-          }
-        ]
         }
       ],
       "conditions": [

@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "X": {
+      "item": "grinnersmobs:spikeprojectile"
+    },
+    "#": {
+      "item": "grinnersmobs:monsterfabric"
+    }
+  },
+  "pattern": [
+    "XXX",
+    "# #",
+    "# #"
+  ],
+  "result": {
+    "item": "grinnersmobs:deathspikearmor_leggings"
+  }
+}

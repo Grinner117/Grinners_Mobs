@@ -3,8 +3,10 @@ package net.grinner117.grinnersmobs.event;
 import net.grinner117.grinnersmobs.GrinnersMobs;
 import net.grinner117.grinnersmobs.entity.ModEntityTypes;
 import net.grinner117.grinnersmobs.entity.custom.DeathSpikeEntity;
+import net.grinner117.grinnersmobs.entity.custom.EntlingOakEntity;
 import net.grinner117.grinnersmobs.entity.custom.PureTitanLankyEntity;
 import net.grinner117.grinnersmobs.entity.custom.PureTitanVillagerEntity;
+
 import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -17,6 +19,7 @@ public class ModEvents {
             event.put(ModEntityTypes.PURETITANVILLAGER.get(), PureTitanVillagerEntity.setAttributes());
             event.put(ModEntityTypes.PURETITANLANKY.get(), PureTitanLankyEntity.setAttributes());
             event.put(ModEntityTypes.DEATHSPIKE.get(), DeathSpikeEntity.setAttributes());
+            event.put(ModEntityTypes.ENTLINGOAK.get(), EntlingOakEntity.setAttributes());
         }
     }
     @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.FORGE)

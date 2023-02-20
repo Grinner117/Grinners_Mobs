@@ -5,6 +5,7 @@ import net.grinner117.grinnersmobs.entity.client.DeathSpikeRenderer;
 import net.grinner117.grinnersmobs.entity.client.PureTitanLankyRenderer;
 import net.grinner117.grinnersmobs.entity.client.PureTitanVillagerRenderer;
 import net.grinner117.grinnersmobs.entity.client.SpikeProjectileRenderer;
+import net.grinner117.grinnersmobs.entity.client.EntlingOakRenderer;
 import net.grinner117.grinnersmobs.item.ModCreativeModeTab;
 import net.grinner117.grinnersmobs.item.ModItems;
 import net.minecraft.client.renderer.entity.EntityRenderers;
@@ -56,6 +57,9 @@ public class GrinnersMobs {
             SpawnPlacements.register(ModEntityTypes.DEATHSPIKE.get(),
                     SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
                     Monster::checkMonsterSpawnRules);
+            SpawnPlacements.register(ModEntityTypes.ENTLINGOAK.get(),
+                    SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                    Monster::checkMonsterSpawnRules);
         });
     }
 
@@ -64,7 +68,11 @@ public class GrinnersMobs {
             event.accept(ModItems.MONSTERBONE);
             event.accept(ModItems.MONSTERLEATHER);
             event.accept(ModItems.MONSTERFLESH);
+            event.accept(ModItems.MONSTERFURTUFT);
+            event.accept(ModItems.MONSTERFABRIC);
             event.accept(ModItems.SPIKEPROJECTILE);
+            event.accept(ModItems.ENTLINGCORE);
+
 
             event.accept(ModItems.LIGHTMONSTERBONEARMOR_BOOTS);
             event.accept(ModItems.LIGHTMONSTERBONEARMOR_CHESTPLATE);
@@ -76,9 +84,15 @@ public class GrinnersMobs {
             event.accept(ModItems.DEATHSPIKEARMOR_LEGGINGS);
             event.accept(ModItems.DEATHSPIKEARMOR_BOOTS);
 
+            event.accept(ModItems.ENTLINGARMOR_HELMET);
+            event.accept(ModItems.ENTLINGARMOR_CHESTPLATE);
+            event.accept(ModItems.ENTLINGARMOR_LEGGINGS);
+            event.accept(ModItems.ENTLINGARMOR_BOOTS);
+
             event.accept(ModItems.DEATHSPIKE_SPAWN_EGG);
             event.accept(ModItems.PURETITANLANKY_SPAWN_EGG);
             event.accept(ModItems.PURETITANVILLAGER_SPAWN_EGG);
+            event.accept(ModItems.ENTLINGOAK_SPAWN_EGG);
         }
     }
     @Mod.EventBusSubscriber(modid = MODID, bus = Mod.EventBusSubscriber.Bus.MOD)
@@ -88,6 +102,7 @@ public class GrinnersMobs {
             EntityRenderers.register(ModEntityTypes.PURETITANVILLAGER.get(), PureTitanVillagerRenderer::new);
             EntityRenderers.register(ModEntityTypes.PURETITANLANKY.get(), PureTitanLankyRenderer::new);
             EntityRenderers.register(ModEntityTypes.DEATHSPIKE.get(), DeathSpikeRenderer::new);
+            EntityRenderers.register(ModEntityTypes.ENTLINGOAK.get(), EntlingOakRenderer::new);
             EntityRenderers.register(ModEntityTypes.SPIKEPROJECTILE.get(), SpikeProjectileRenderer::new);
         }
     }

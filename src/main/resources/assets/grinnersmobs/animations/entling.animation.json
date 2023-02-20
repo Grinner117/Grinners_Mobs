@@ -1,0 +1,55 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.entling.idle": {
+			"loop": true
+		},
+		"animation.entling.walk": {
+			"loop": true
+		},
+		"animation.entling.attack": {
+			"animation_length": 0.33333,
+			"bones": {
+				"bone3": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"0.1667": {
+							"vector": [25, 0, 0]
+						},
+						"0.3333": {
+							"vector": [0, 0, 0]
+						}
+					}
+				},
+				"bone4": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"0.1667": {
+							"vector": [45, 0, 0]
+						},
+						"0.3333": {
+							"vector": [0, 0, 0]
+						}
+					}
+				},
+				"bone5": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"0.1667": {
+							"vector": [25, 0, 0]
+						},
+						"0.3333": {
+							"vector": [0, 0, 0]
+						}
+					}
+				}
+			}
+		}
+	}
+}

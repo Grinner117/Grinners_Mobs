@@ -1,6 +1,9 @@
 package net.grinner117.grinnersmobs.perks;
 
 import net.grinner117.grinnersmobs.base.IDamageHandlingArmor;
+import net.minecraft.ChatFormatting;
+import net.minecraft.client.gui.screens.Screen;
+import net.minecraft.network.chat.Component;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
@@ -11,9 +14,13 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.ArmorMaterial;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.event.entity.living.LivingDamageEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
+
+import javax.annotation.Nullable;
+import java.util.List;
 
 public class FireReflect_Perk extends ArmorItem implements IDamageHandlingArmor{
     public FireReflect_Perk(ArmorMaterial material, EquipmentSlot slot, Properties properties) {
@@ -45,5 +52,14 @@ public class FireReflect_Perk extends ArmorItem implements IDamageHandlingArmor{
         } else {
             return amount;
         }
+    }
+    @Override
+    public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> componets, TooltipFlag flag){
+        if(Screen.hasShiftDown()){
+            componets.add(Component.literal("Fire Resistance").withStyle(ChatFormatting.DARK_AQUA));
+        } else{
+            componets.add(Component.literal("Shift Right click for more Info").withStyle(ChatFormatting.YELLOW));
+        }
+        super.appendHoverText(stack, level, componets,flag);
     }
 }

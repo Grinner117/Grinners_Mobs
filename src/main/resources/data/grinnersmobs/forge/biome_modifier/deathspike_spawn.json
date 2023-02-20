@@ -11,7 +11,7 @@
   ],
   "spawners": {
     "type": "grinnersmobs:deathspike",
-    "weight": 20,
+    "weight": 30,
     "minCount": 2,
     "maxCount": 6
   }

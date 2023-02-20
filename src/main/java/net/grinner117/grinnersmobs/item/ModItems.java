@@ -30,6 +30,10 @@ public class ModItems {
     public static final RegistryObject<Item> PURETITANVILLAGER_SPAWN_EGG = ITEMS.register("puretitanvillager_spawn_egg",
             () -> new ForgeSpawnEggItem(ModEntityTypes.PURETITANVILLAGER, 0x22b841, 0x19782e,
                     new Item.Properties()));
+
+    public static final RegistryObject<Item> ENTLINGOAK_SPAWN_EGG = ITEMS.register("entlingoak_spawn_egg",
+            () -> new ForgeSpawnEggItem(ModEntityTypes.ENTLINGOAK, 0x22b841, 0xF4732e,
+                    new Item.Properties()));
     public static final RegistryObject<Item> DEATHSPIKE_SPAWN_EGG = ITEMS.register("deathspike_spawn_egg",
             () -> new ForgeSpawnEggItem(ModEntityTypes.DEATHSPIKE, 0x54b541, 0xF4732e,
                     new Item.Properties()));
@@ -45,27 +49,42 @@ public class ModItems {
             () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> MONSTERLEATHER = ITEMS.register("monsterleather",
             () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> MONSTERFURTUFT = ITEMS.register("monsterfurtuft",
+            () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> MONSTERFABRIC = ITEMS.register("monsterfabric",
+            () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> ENTLINGCORE = ITEMS.register("entlingcore",
+            () -> new Item(new Item.Properties()));
 
-    // in ItemInit.java
     public static final RegistryObject<Item> SPIKEPROJECTILE = ITEMS.register("spikeprojectile",
             () -> new SpikeProjectileItem(new Item.Properties()));
+
     public static final RegistryObject<ArmorItem> LIGHTMONSTERBONEARMOR_HELMET = ITEMS.register("lightmonsterbonearmor_helmet",
             () -> new Nightvison_Perk(ArmorTiers.LIGHTMONSTERBONEARMOR, EquipmentSlot.HEAD, props()));
     public static final RegistryObject<ArmorItem> LIGHTMONSTERBONEARMOR_CHESTPLATE = ITEMS.register("lightmonsterbonearmor_chestplate",
             () -> new DamageRes2_Perk(ArmorTiers.LIGHTMONSTERBONEARMOR, EquipmentSlot.CHEST, props()));
     public static final RegistryObject<ArmorItem> LIGHTMONSTERBONEARMOR_LEGGINGS = ITEMS.register("lightmonsterbonearmor_leggings",
-            () -> new Jump2_Perk(ArmorTiers.LIGHTMONSTERBONEARMOR, EquipmentSlot.LEGS, props()));
+            () -> new Jump3_Perk(ArmorTiers.LIGHTMONSTERBONEARMOR, EquipmentSlot.LEGS, props()));
     public static final RegistryObject<ArmorItem> LIGHTMONSTERBONEARMOR_BOOTS = ITEMS.register("lightmonsterbonearmor_boots",
             () -> new Speed3_Perk(ArmorTiers.LIGHTMONSTERBONEARMOR, EquipmentSlot.FEET, props()));
+
     public static final RegistryObject<ArmorItem> DEATHSPIKEARMOR_HELMET = ITEMS.register("deathspikearmor_helmet",
-            () -> new Health3_Perk(ArmorTiers.DEATHSPIKEARMOR, EquipmentSlot.HEAD, props()));
+            () -> new Damage3_Perk(ArmorTiers.DEATHSPIKEARMOR, EquipmentSlot.HEAD, props()));
     public static final RegistryObject<ArmorItem> DEATHSPIKEARMOR_CHESTPLATE = ITEMS.register("deathspikearmor_chestplate",
-            () -> new Damage3_Perk(ArmorTiers.DEATHSPIKEARMOR, EquipmentSlot.CHEST, props()));
+            () -> new FireReflect_Perk(ArmorTiers.DEATHSPIKEARMOR, EquipmentSlot.CHEST, props()));
     public static final RegistryObject<ArmorItem> DEATHSPIKEARMOR_LEGGINGS = ITEMS.register("deathspikearmor_leggings",
             () -> new DamageRes2_Perk(ArmorTiers.DEATHSPIKEARMOR, EquipmentSlot.LEGS, props()));
     public static final RegistryObject<ArmorItem> DEATHSPIKEARMOR_BOOTS = ITEMS.register("deathspikearmor_boots",
             () -> new Speed3_Perk(ArmorTiers.DEATHSPIKEARMOR, EquipmentSlot.FEET, props()));
 
+    public static final RegistryObject<ArmorItem> ENTLINGARMOR_HELMET = ITEMS.register("entlingarmor_helmet",
+            () -> new DamageRes2_Perk(ArmorTiers.ENTLINGARMOR, EquipmentSlot.HEAD, props()));
+    public static final RegistryObject<ArmorItem> ENTLINGARMOR_CHESTPLATE = ITEMS.register("entlingarmor_chestplate",
+            () -> new EntlingCurseB_Perk(ArmorTiers.ENTLINGARMOR, EquipmentSlot.CHEST, props()));
+    public static final RegistryObject<ArmorItem> ENTLINGARMOR_LEGGINGS = ITEMS.register("entlingarmor_leggings",
+            () -> new EntlingCurseA_Perk(ArmorTiers.ENTLINGARMOR, EquipmentSlot.LEGS, props()));
+    public static final RegistryObject<ArmorItem> ENTLINGARMOR_BOOTS = ITEMS.register("entlingarmor_boots",
+            () -> new DamageRes2_Perk(ArmorTiers.ENTLINGARMOR, EquipmentSlot.FEET, props()));
 
 
 private static Item.Properties props(){return new Item.Properties(); }
@@ -79,17 +98,23 @@ public static final ArmorMaterial LIGHTMONSTERBONEARMOR = new ModArmorMaterial(
         new int[]{7,15,12,7},
         200,
         SoundEvents.ARMOR_EQUIP_NETHERITE,
-        8.0f, 0.5f,
+        12.0f, 0.8f,
         () -> Ingredient.of(ModItems.MONSTERLEATHER.get()));
-
     public static final ArmorMaterial DEATHSPIKEARMOR = new ModArmorMaterial(
             "deathspikearmor",
-            2000,
+            1600,
             new int[]{10,16,14,10},
             300,
             SoundEvents.ARMOR_EQUIP_CHAIN,
-            12.0f, 0.3f,
+            6.0f, 0.3f,
             () -> Ingredient.of(ModItems.SPIKEPROJECTILE.get()));
-
+    public static final ArmorMaterial ENTLINGARMOR = new ModArmorMaterial(
+            "entlingarmor",
+            2600,
+            new int[]{6,14,12,6},
+            260,
+            SoundEvents.ARMOR_EQUIP_TURTLE,
+            21.0f, 8.0f,
+            () -> Ingredient.of(ModItems.SPIKEPROJECTILE.get()));
 }
 }
