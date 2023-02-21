@@ -2,18 +2,21 @@
   "type": "minecraft:crafting_shaped",
   "key": {
     "X": {
-      "item": "grinnersmobs:monsterfabric"
+      "item": "grinnersmobs:monsterleather"
     },
     "#": {
-      "item": "grinnersmobs:spikeprojectile"
+      "item": "minecraft:oak_log"
+    },
+    "A": {
+      "item": "grinnersmobs:entlingcore"
     }
   },
   "pattern": [
     "# #",
-    "XXX",
+    "XAX",
     "###"
   ],
   "result": {
-    "item": "grinnersmobs:deathspikearmor_chestplate"
+    "item": "grinnersmobs:entlingarmor_chestplate"
   }
 }

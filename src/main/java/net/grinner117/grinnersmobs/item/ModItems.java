@@ -78,7 +78,7 @@ public class ModItems {
             () -> new Speed3_Perk(ArmorTiers.DEATHSPIKEARMOR, EquipmentSlot.FEET, props()));
 
     public static final RegistryObject<ArmorItem> ENTLINGARMOR_HELMET = ITEMS.register("entlingarmor_helmet",
-            () -> new DamageRes2_Perk(ArmorTiers.ENTLINGARMOR, EquipmentSlot.HEAD, props()));
+            () -> new DigSpeed2_Perk(ArmorTiers.ENTLINGARMOR, EquipmentSlot.HEAD, props()));
     public static final RegistryObject<ArmorItem> ENTLINGARMOR_CHESTPLATE = ITEMS.register("entlingarmor_chestplate",
             () -> new EntlingCurseB_Perk(ArmorTiers.ENTLINGARMOR, EquipmentSlot.CHEST, props()));
     public static final RegistryObject<ArmorItem> ENTLINGARMOR_LEGGINGS = ITEMS.register("entlingarmor_leggings",

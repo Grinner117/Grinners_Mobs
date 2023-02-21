@@ -2,18 +2,21 @@
   "type": "minecraft:crafting_shaped",
   "key": {
     "X": {
-      "item": "grinnersmobs:spikeprojectile"
+      "item": "minecraft:oak_log"
     },
     "#": {
-      "item": "grinnersmobs:monsterfabric"
+      "item": "grinnersmobs:monsterleather"
+    },
+    "$": {
+      "item": "grinnersmobs:entlingcore"
     }
   },
   "pattern": [
-    "XXX",
+    "X$X",
     "# #",
     "# #"
   ],
   "result": {
-    "item": "grinnersmobs:deathspikearmor_leggings"
+    "item": "grinnersmobs:entlingarmor_leggings"
   }
 }

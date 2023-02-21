@@ -16,8 +16,8 @@ import net.minecraft.world.level.Level;
 import javax.annotation.Nullable;
 import java.util.List;
 
-public class DamageRes2_Perk extends ArmorItem {
-    public DamageRes2_Perk(ArmorMaterial material, EquipmentSlot slot, Properties properties) {
+public class DigSpeed2_Perk extends ArmorItem {
+    public DigSpeed2_Perk(ArmorMaterial material, EquipmentSlot slot, Properties properties) {
         super(material, slot, properties);
 
     }
@@ -25,14 +25,14 @@ public class DamageRes2_Perk extends ArmorItem {
     @Override
     public void onArmorTick(ItemStack stack, Level world, Player player) {
         if (!world.isClientSide()) {
-            player.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 200, 2));
+            player.addEffect(new MobEffectInstance(MobEffects.DIG_SPEED, 200, 2));
         }
     }
 
     @Override
     public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> componets, TooltipFlag flag){
         if(Screen.hasShiftDown()){
-            componets.add(Component.literal("Damage Resistance 2").withStyle(ChatFormatting.DARK_AQUA));
+            componets.add(Component.literal("Dig Speed 2").withStyle(ChatFormatting.DARK_AQUA));
         } else{
             componets.add(Component.literal("Shift Right click for more Info").withStyle(ChatFormatting.YELLOW));
         }
