@@ -34,9 +34,13 @@ public class ModItems {
     public static final RegistryObject<Item> ENTLINGOAK_SPAWN_EGG = ITEMS.register("entlingoak_spawn_egg",
             () -> new ForgeSpawnEggItem(ModEntityTypes.ENTLINGOAK, 0x22b841, 0xF4732e,
                     new Item.Properties()));
+    public static final RegistryObject<Item> ENTOAK_SPAWN_EGG = ITEMS.register("entoak_spawn_egg",
+            () -> new ForgeSpawnEggItem(ModEntityTypes.ENTOAK, 0x22b841, 0xF7F2e,
+                    new Item.Properties()));
     public static final RegistryObject<Item> DEATHSPIKE_SPAWN_EGG = ITEMS.register("deathspike_spawn_egg",
             () -> new ForgeSpawnEggItem(ModEntityTypes.DEATHSPIKE, 0x54b541, 0xF4732e,
                     new Item.Properties()));
+
 
     public static final RegistryObject<Item> MONSTERFLESH = ITEMS.register("monsterflesh",
             () -> new Item(new Item.Properties()
@@ -55,7 +59,6 @@ public class ModItems {
             () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> ENTLINGCORE = ITEMS.register("entlingcore",
             () -> new Item(new Item.Properties()));
-
     public static final RegistryObject<Item> SPIKEPROJECTILE = ITEMS.register("spikeprojectile",
             () -> new SpikeProjectileItem(new Item.Properties()));
 

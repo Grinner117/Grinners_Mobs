@@ -127,7 +127,6 @@ public class EntlingOakEntity extends Monster implements GeoEntity {
             }
         }
     }
-
     public void readAdditionalSaveData(CompoundTag p_32511_) {
         super.readAdditionalSaveData(p_32511_);
         BlockState blockstate = null;
@@ -137,17 +136,6 @@ public class EntlingOakEntity extends Monster implements GeoEntity {
                 blockstate = null;
             }
         }
-    }
-    
-    public void aiStep() {
-        if (this.level.isClientSide) {
-            for (int i = 0; i < 2; ++i) {
-                this.level.addParticle(ParticleTypes.PORTAL, this.getRandomX(0.5D), this.getRandomY() - 0.25D, this.getRandomZ(0.5D), (this.random.nextDouble() - 0.5D) * 2.0D, -this.random.nextDouble(), (this.random.nextDouble() - 0.5D) * 2.0D);
-            }
-        }
-
-        this.jumping = false;
-        super.aiStep();
     }
 
     public boolean isSensitiveToWater() {
@@ -162,10 +150,8 @@ public class EntlingOakEntity extends Monster implements GeoEntity {
                 this.teleport();
             }
         }
-
         super.customServerAiStep();
     }
-
     protected boolean teleport() {
         if (!this.level.isClientSide() && this.isAlive()) {
             double d0 = this.getX() + (this.random.nextDouble() - 0.5D) * 64.0D;
@@ -216,7 +202,7 @@ public class EntlingOakEntity extends Monster implements GeoEntity {
         }
     }
     protected SoundEvent getHurtSound(DamageSource p_32527_) {
-        return SoundEvents.ENDERMAN_HURT;
+        return SoundEvents.WOOD_BREAK;
     }
 
     protected SoundEvent getDeathSound() {

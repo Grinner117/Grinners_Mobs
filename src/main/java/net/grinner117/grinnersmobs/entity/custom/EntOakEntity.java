@@ -46,7 +46,7 @@ import javax.annotation.Nullable;
 import java.util.Optional;
 import java.util.UUID;
 
-public class EntlingOakEntity extends Monster implements GeoEntity {
+public class EntOakEntity extends Monster implements GeoEntity {
     private AnimatableInstanceCache factory = new SingletonAnimatableInstanceCache(this);
 
     private static final UUID SPEED_MODIFIER_ATTACKING_UUID = UUID.fromString("020E0DFB-87AE-4653-9556-831010E291A0");
@@ -63,9 +63,9 @@ public class EntlingOakEntity extends Monster implements GeoEntity {
     @Nullable
     private UUID persistentAngerTarget;
 
-    public EntlingOakEntity(EntityType<? extends Monster> EntityType, Level Level) {
+    public EntOakEntity(EntityType<? extends Monster> EntityType, Level Level) {
         super(EntityType, Level);
-        this.xpReward = 300;
+        this.xpReward = 600;
     }
     protected void registerGoals() {
         this.goalSelector.addGoal(0, new FloatGoal(this));
@@ -84,14 +84,14 @@ public class EntlingOakEntity extends Monster implements GeoEntity {
 
     public static AttributeSupplier setAttributes() {
         return Monster.createMonsterAttributes()
-                .add(Attributes.MAX_HEALTH, 200.0D)
+                .add(Attributes.MAX_HEALTH, 400.0D)
                 .add(Attributes.MOVEMENT_SPEED, (double) 0.0F)
-                .add(Attributes.ATTACK_DAMAGE, 20.0D)
-                .add(Attributes.FOLLOW_RANGE, 64.0D)
-                .add(Attributes.ARMOR, 16.0D)
-                .add(Attributes.ATTACK_KNOCKBACK, 10.0D)
+                .add(Attributes.ATTACK_DAMAGE, 40.0D)
+                .add(Attributes.FOLLOW_RANGE, 128.0D)
+                .add(Attributes.ARMOR, 32.0D)
+                .add(Attributes.ATTACK_KNOCKBACK, 15.0D)
                 .add(Attributes.KNOCKBACK_RESISTANCE, 32.0D)
-                 .add(Attributes.ARMOR_TOUGHNESS, 32.0D)
+                .add(Attributes.ARMOR_TOUGHNESS, 32.0D)
                 .build();
     }
 
@@ -109,8 +109,7 @@ public class EntlingOakEntity extends Monster implements GeoEntity {
                 attributeinstance.addTransientModifier(SPEED_MODIFIER_ATTACKING);
             }
         }
-
-        super.setTarget(p_32537_); //Forge: Moved down to allow event handlers to write data manager values.
+        super.setTarget(p_32537_);
     }
     protected void defineSynchedData() {
         super.defineSynchedData();
@@ -127,7 +126,6 @@ public class EntlingOakEntity extends Monster implements GeoEntity {
             }
         }
     }
-
     public void readAdditionalSaveData(CompoundTag p_32511_) {
         super.readAdditionalSaveData(p_32511_);
         BlockState blockstate = null;
@@ -138,19 +136,7 @@ public class EntlingOakEntity extends Monster implements GeoEntity {
             }
         }
     }
-    
-    public void aiStep() {
-        if (this.level.isClientSide) {
-            for (int i = 0; i < 2; ++i) {
-                this.level.addParticle(ParticleTypes.PORTAL, this.getRandomX(0.5D), this.getRandomY() - 0.25D, this.getRandomZ(0.5D), (this.random.nextDouble() - 0.5D) * 2.0D, -this.random.nextDouble(), (this.random.nextDouble() - 0.5D) * 2.0D);
-            }
-        }
-
-        this.jumping = false;
-        super.aiStep();
-    }
-
-    public boolean isSensitiveToWater() {
+       public boolean isSensitiveToWater() {
         return false;
     }
 
@@ -162,7 +148,6 @@ public class EntlingOakEntity extends Monster implements GeoEntity {
                 this.teleport();
             }
         }
-
         super.customServerAiStep();
     }
 
@@ -205,18 +190,17 @@ public class EntlingOakEntity extends Monster implements GeoEntity {
             if (flag2) {
                 this.level.gameEvent(GameEvent.TELEPORT, vec3, GameEvent.Context.of(this));
                 if (!this.isSilent()) {
-                    this.level.playSound((Player) null, this.xo, this.yo, this.zo, SoundEvents.ENDERMAN_TELEPORT, this.getSoundSource(), 1.0F, 1.0F);
-                    this.playSound(SoundEvents.ENDERMAN_TELEPORT, 1.0F, 1.0F);
+                    this.level.playSound((Player) null, this.xo, this.yo, this.zo, SoundEvents.ENDERMAN_TELEPORT, this.getSoundSource(), 2.0F, 2.0F);
+                    this.playSound(SoundEvents.ENDERMAN_TELEPORT, 2.0F, 2.0F);
                 }
             }
-
             return flag2;
         } else {
             return false;
         }
     }
     protected SoundEvent getHurtSound(DamageSource p_32527_) {
-        return SoundEvents.ENDERMAN_HURT;
+        return SoundEvents.WOOD_BREAK;
     }
 
     protected SoundEvent getDeathSound() {
@@ -238,14 +222,12 @@ public class EntlingOakEntity extends Monster implements GeoEntity {
                     return true;
                 }
             }
-
             return flag1;
         } else {
             boolean flag = super.hurt(p_32494_, p_32495_);
             if (!this.level.isClientSide() && !(p_32494_.getEntity() instanceof LivingEntity) && this.random.nextInt(10) != 0) {
                 this.teleport();
             }
-
             return flag;
         }
     }
@@ -262,12 +244,12 @@ public class EntlingOakEntity extends Monster implements GeoEntity {
                 0, this::attackPredicate));
     }
 
-    private PlayState predicate(software.bernie.geckolib.core.animation.AnimationState animationState) {
+    private PlayState predicate(AnimationState animationState) {
         if (animationState.isMoving()) {
-            animationState.getController().setAnimation(RawAnimation.begin().then("animation.entling.walk", Animation.LoopType.LOOP));
+            animationState.getController().setAnimation(RawAnimation.begin().then("animation.ent.walk", Animation.LoopType.LOOP));
             return PlayState.CONTINUE;
         }
-        animationState.getController().setAnimation(RawAnimation.begin().then("animation.entling.idle", Animation.LoopType.LOOP));
+        animationState.getController().setAnimation(RawAnimation.begin().then("animation.ent.idle", Animation.LoopType.LOOP));
         return PlayState.CONTINUE;
     }
 
@@ -275,7 +257,7 @@ public class EntlingOakEntity extends Monster implements GeoEntity {
         if (this.swinging && state.getController().getAnimationState().equals(AnimationController.State.STOPPED)) {
             state.getController().forceAnimationReset();
             state.getController().setAnimation(RawAnimation.begin()
-                    .then("animation.entling.attack", Animation.LoopType.PLAY_ONCE));
+                    .then("animation.ent.attack", Animation.LoopType.PLAY_ONCE));
             this.swinging = false;
         }
         return PlayState.CONTINUE;

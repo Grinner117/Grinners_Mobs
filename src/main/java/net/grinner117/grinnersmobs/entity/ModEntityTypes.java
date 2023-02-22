@@ -33,8 +33,13 @@ public class ModEntityTypes {
     public static final RegistryObject<EntityType<EntlingOakEntity>> ENTLINGOAK =
             ENTITY_TYPES.register("entlingoak",
                     () -> EntityType.Builder.of(EntlingOakEntity::new, MobCategory.MONSTER)
-                            .sized(2.0F, 2.0F).clientTrackingRange(60)
+                            .sized(2.0F, 3.0F).clientTrackingRange(60)
                             .build(new ResourceLocation(GrinnersMobs.MODID,"entlingoak").toString()));
+    public static final RegistryObject<EntityType<EntOakEntity>> ENTOAK =
+            ENTITY_TYPES.register("entoak",
+                    () -> EntityType.Builder.of(EntOakEntity::new, MobCategory.MONSTER)
+                            .sized(3.0F, 8.0F).clientTrackingRange(70)
+                            .build(new ResourceLocation(GrinnersMobs.MODID,"entoak").toString()));
 
     public static void register(IEventBus eventBus) {
         ENTITY_TYPES.register(eventBus);

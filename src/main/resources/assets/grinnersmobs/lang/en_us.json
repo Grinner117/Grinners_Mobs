@@ -3,13 +3,14 @@
   "item.grinnersmobs.puretitanlanky_spawn_egg": "Pure Titan Lanky Spawn Egg",
   "item.grinnersmobs.deathspike_spawn_egg": "Death Spike Spawn Egg",
   "item.grinnersmobs.entlingoak_spawn_egg": "Entling Oak Spawn Egg",
+  "item.grinnersmobs.entoak_spawn_egg": "Ent Oak Spawn Egg",
 
 
   "entity.grinnersmobs.puretitanvillager": "Pure Titan",
   "entity.grinnersmobs.puretitanlanky": "Pure Titan",
   "entity.grinnersmobs.deathspike": "Death Spike",
   "entity.grinnersmobs.entlingoak": "Entling",
-
+  "entity.grinnersmobs.entoak": "Ent",
 
   "item.grinnersmobs.monsterflesh": "Monster Flesh",
   "item.grinnersmobs.monsterbone": "Monster Bone",
@@ -17,14 +18,12 @@
   "item.grinnersmobs.monsterfurtuft": "Monster Fur Tuft",
   "item.grinnersmobs.monsterfabric": "Monster Fabric",
   "item.grinnersmobs.spikeprojectile": "Spike",
-  "item.grinnersmobs.entlingcore": "Entling Core",
-
+  "item.grinnersmobs.entlingcore": "Ent Core",
 
   "item.grinnersmobs.lightmonsterbonearmor_helmet": "Light Monster Bone Helmet ",
   "item.grinnersmobs.lightmonsterbonearmor_chestplate": "Light Monster Bone Chestplate ",
   "item.grinnersmobs.lightmonsterbonearmor_leggings": "Light Monster Bone Leggings",
   "item.grinnersmobs.lightmonsterbonearmor_boots": "Light Monster Bone Boots",
-
 
   "item.grinnersmobs.deathspikearmor_helmet": "Death Spike Mask",
   "item.grinnersmobs.deathspikearmor_chestplate": "Death Spike Chestplate",
@@ -35,5 +34,4 @@
   "item.grinnersmobs.entlingarmor_chestplate": "Entling Chestplate",
   "item.grinnersmobs.entlingarmor_leggings": "Entling Leggings",
   "item.grinnersmobs.entlingarmor_boots": "Entling Boots"
-
 }

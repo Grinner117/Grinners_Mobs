@@ -1,6 +1,7 @@
 package net.grinner117.grinnersmobs.entity.client;
 
 import net.grinner117.grinnersmobs.GrinnersMobs;
+import net.grinner117.grinnersmobs.entity.custom.EntOakEntity;
 import net.grinner117.grinnersmobs.entity.custom.EntlingOakEntity;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.RenderType;
@@ -10,18 +11,18 @@ import org.jetbrains.annotations.Nullable;
 import software.bernie.geckolib.renderer.GeoEntityRenderer;
 
 
-public class EntlingOakRenderer extends GeoEntityRenderer<EntlingOakEntity> {
-    public EntlingOakRenderer(EntityRendererProvider.Context renderManager) {
-        super(renderManager, new EntlingOakModel());
-        this.shadowRadius = 1.0f;
-        this.scaleWidth = 3;
-        this.scaleHeight = 3;
+public class EntOakRenderer extends GeoEntityRenderer<EntOakEntity> {
+    public EntOakRenderer(EntityRendererProvider.Context renderManager) {
+        super(renderManager, new EntOakModel());
+        this.shadowRadius = 3.5f;
+        this.scaleWidth = 8;
+        this.scaleHeight = 8;
     }
     @Override
-    public ResourceLocation getTextureLocation(EntlingOakEntity instance) {
-        return new ResourceLocation(GrinnersMobs.MODID, "textures/entity/entling_oak.png");
+    public ResourceLocation getTextureLocation(EntOakEntity instance) {
+        return new ResourceLocation(GrinnersMobs.MODID, "textures/entity/entoak.png");
     }
-      public RenderType getRenderType(EntlingOakEntity animatable, ResourceLocation texture,
+      public RenderType getRenderType(EntOakEntity animatable, ResourceLocation texture,
                                     @Nullable MultiBufferSource bufferSource,
                                     float particalTick){
         return super.getRenderType(animatable, texture, bufferSource, particalTick);

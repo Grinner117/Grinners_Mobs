@@ -2,7 +2,7 @@
   "type": "minecraft:entity",
   "pools": [
     {
-      "rolls": 6,
+      "rolls": 3,
       "bonus_rolls": 0,
       "entries": [
         {
@@ -39,7 +39,7 @@
             },
             {
               "function": "minecraft:looting_enchant",
-              "count": 1
+              "count": 0
             }
           ]
         },

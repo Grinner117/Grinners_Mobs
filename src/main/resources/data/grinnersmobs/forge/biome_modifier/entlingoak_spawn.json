@@ -10,7 +10,7 @@
   ],
   "spawners": {
     "type": "grinnersmobs:entingoak",
-    "weight": 40,
+    "weight": 60,
     "minCount": 1,
     "maxCount": 1
   }
