@@ -1,0 +1,17 @@
+{
+  "type": "forge:add_spawns",
+  "biomes": [
+    "minecraft:swamp",
+    "minecraft:plains",
+    "minecraft:meadow",
+    "minecraft:mangrove_swamp",
+    "minecraft:sunflower_plains",
+    "minecraft:river"
+  ],
+  "spawners": {
+    "type": "grinnersmobs:entingoak",
+    "weight": 40,
+    "minCount": 1,
+    "maxCount": 1
+  }
+}
