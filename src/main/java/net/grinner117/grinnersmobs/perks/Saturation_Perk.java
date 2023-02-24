@@ -16,8 +16,8 @@ import net.minecraft.world.level.Level;
 import javax.annotation.Nullable;
 import java.util.List;
 
-public class EntlingCurseA_Perk extends ArmorItem {
-    public EntlingCurseA_Perk(ArmorMaterial material, EquipmentSlot slot, Properties properties) {
+public class Saturation_Perk extends ArmorItem {
+    public Saturation_Perk(ArmorMaterial material, EquipmentSlot slot, Properties properties) {
         super(material, slot, properties);
 
     }
@@ -25,19 +25,16 @@ public class EntlingCurseA_Perk extends ArmorItem {
     @Override
     public void onArmorTick(ItemStack stack, Level world, Player player) {
         if (!world.isClientSide()) {
-            player.addEffect(new MobEffectInstance(MobEffects.SATURATION, 200, 1));
-            player.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 200, 1));
-
-        }
-
+            player.addEffect(new MobEffectInstance(MobEffects.SATURATION, 200, 0));
+           }
     }
 
     @Override
     public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> componets, TooltipFlag flag){
         if(Screen.hasShiftDown()){
-            componets.add(Component.literal("Saturation_Perk 1, Slow Movement 1").withStyle(ChatFormatting.DARK_AQUA));
+            componets.add(Component.literal("Saturation_Perk").withStyle(ChatFormatting.DARK_AQUA));
         } else{
-            componets.add(Component.literal("Entling Curse of Hunger").withStyle(ChatFormatting.GREEN));
+            componets.add(Component.literal("Shift Right click for more Info").withStyle(ChatFormatting.GREEN));
         }
         super.appendHoverText(stack, level, componets,flag);
     }

@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "#": {
+      "item": "grinnersmobs:entbark"
+    },
+    "$": {
+      "item": "grinnersmobs:entlingcore"
+    }
+  },
+  "pattern": [
+    "#$#",
+    "# #",
+    "# #"
+  ],
+  "result": {
+    "item": "grinnersmobs:entarmor_leggings"
+  }
+}

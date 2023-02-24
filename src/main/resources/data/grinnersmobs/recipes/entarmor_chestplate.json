@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+       "#": {
+      "item": "grinnersmobs:entbark"
+    },
+    "A": {
+      "item": "grinnersmobs:entlingcore"
+    }
+  },
+  "pattern": [
+    "# #",
+    "#A#",
+    "###"
+  ],
+  "result": {
+    "item": "grinnersmobs:entarmor_chestplate"
+  }
+}

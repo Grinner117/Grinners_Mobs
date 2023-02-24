@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "X": {
+      "item": "grinnersmobs:entbark"
+    },
+    "#": {
+      "item": "grinnersmobs:entlingcore"
+    }
+  },
+  "pattern": [
+    "XXX",
+    "# #"
+  ],
+  "result": {
+    "item": "grinnersmobs:entarmor_helmet"
+  }
+}

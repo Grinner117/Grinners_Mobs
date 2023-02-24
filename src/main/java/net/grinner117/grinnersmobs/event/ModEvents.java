@@ -18,7 +18,6 @@ public class ModEvents {
             event.put(ModEntityTypes.DEATHSPIKE.get(), DeathSpikeEntity.setAttributes());
             event.put(ModEntityTypes.ENTLINGOAK.get(), EntlingOakEntity.setAttributes());
             event.put(ModEntityTypes.ENTOAK.get(), EntOakEntity.setAttributes());
-
         }
     }
     @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.FORGE)

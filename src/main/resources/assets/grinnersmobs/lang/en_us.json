@@ -19,6 +19,8 @@
   "item.grinnersmobs.monsterfabric": "Monster Fabric",
   "item.grinnersmobs.spikeprojectile": "Spike",
   "item.grinnersmobs.entlingcore": "Ent Core",
+  "item.grinnersmobs.entbark": "Ent Bark",
+
 
   "item.grinnersmobs.lightmonsterbonearmor_helmet": "Light Monster Bone Helmet ",
   "item.grinnersmobs.lightmonsterbonearmor_chestplate": "Light Monster Bone Chestplate ",
@@ -33,5 +35,9 @@
   "item.grinnersmobs.entlingarmor_helmet": "Entling Helmet",
   "item.grinnersmobs.entlingarmor_chestplate": "Entling Chestplate",
   "item.grinnersmobs.entlingarmor_leggings": "Entling Leggings",
-  "item.grinnersmobs.entlingarmor_boots": "Entling Boots"
+  "item.grinnersmobs.entlingarmor_boots": "Entling Boots",
+  "item.grinnersmobs.entarmor_helmet": "Ent Helmet",
+  "item.grinnersmobs.entarmor_chestplate": "Ent Chestplate",
+  "item.grinnersmobs.entarmor_leggings": "Ent Leggings",
+  "item.grinnersmobs.entarmor_boots": "Ent Boots"
 }

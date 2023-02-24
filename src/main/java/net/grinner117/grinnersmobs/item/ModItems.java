@@ -59,6 +59,8 @@ public class ModItems {
             () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> ENTLINGCORE = ITEMS.register("entlingcore",
             () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> ENTBARK = ITEMS.register("entbark",
+            () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> SPIKEPROJECTILE = ITEMS.register("spikeprojectile",
             () -> new SpikeProjectileItem(new Item.Properties()));
 
@@ -89,6 +91,15 @@ public class ModItems {
     public static final RegistryObject<ArmorItem> ENTLINGARMOR_BOOTS = ITEMS.register("entlingarmor_boots",
             () -> new DamageRes2_Perk(ArmorTiers.ENTLINGARMOR, EquipmentSlot.FEET, props()));
 
+    public static final RegistryObject<ArmorItem> ENTARMOR_HELMET = ITEMS.register("entarmor_helmet",
+            () -> new DigSpeed2_Perk(ArmorTiers.ENTARMOR, EquipmentSlot.HEAD, props()));
+    public static final RegistryObject<ArmorItem> ENTARMOR_CHESTPLATE = ITEMS.register("entarmor_chestplate",
+            () -> new Regeneration2_Perk(ArmorTiers.ENTARMOR, EquipmentSlot.CHEST, props()));
+    public static final RegistryObject<ArmorItem> ENTARMOR_LEGGINGS = ITEMS.register("entarmor_leggings",
+            () -> new Saturation_Perk(ArmorTiers.ENTARMOR, EquipmentSlot.LEGS, props()));
+    public static final RegistryObject<ArmorItem> ENTARMOR_BOOTS = ITEMS.register("entarmor_boots",
+            () -> new DamageRes4_Perk(ArmorTiers.ENTARMOR, EquipmentSlot.FEET, props()));
+
 
 private static Item.Properties props(){return new Item.Properties(); }
        public static void register(IEventBus eventBus) {
@@ -97,7 +108,7 @@ private static Item.Properties props(){return new Item.Properties(); }
 public static class ArmorTiers{
 public static final ArmorMaterial LIGHTMONSTERBONEARMOR = new ModArmorMaterial(
         "lightmonsterbonearmor",
-        1800,
+        2200,
         new int[]{7,15,12,7},
         200,
         SoundEvents.ARMOR_EQUIP_NETHERITE,
@@ -105,19 +116,27 @@ public static final ArmorMaterial LIGHTMONSTERBONEARMOR = new ModArmorMaterial(
         () -> Ingredient.of(ModItems.MONSTERLEATHER.get()));
     public static final ArmorMaterial DEATHSPIKEARMOR = new ModArmorMaterial(
             "deathspikearmor",
-            1600,
+            2200,
             new int[]{10,16,14,10},
             300,
             SoundEvents.ARMOR_EQUIP_CHAIN,
-            6.0f, 0.3f,
+            8.0f, 0.3f,
             () -> Ingredient.of(ModItems.SPIKEPROJECTILE.get()));
     public static final ArmorMaterial ENTLINGARMOR = new ModArmorMaterial(
             "entlingarmor",
-            2600,
-            new int[]{6,14,12,6},
+            2400,
+            new int[]{7,14,13,7},
             260,
             SoundEvents.ARMOR_EQUIP_TURTLE,
-            21.0f, 8.0f,
-            () -> Ingredient.of(ModItems.SPIKEPROJECTILE.get()));
+            16.0f, 6.0f,
+            () -> Ingredient.of(ModItems.ENTBARK.get()));
+    public static final ArmorMaterial ENTARMOR = new ModArmorMaterial(
+            "entarmor",
+            3000,
+            new int[]{6,13,11,6},
+            300,
+            SoundEvents.ARMOR_EQUIP_TURTLE,
+            20.0f, 8.0f,
+            () -> Ingredient.of(ModItems.ENTBARK.get()));
 }
 }

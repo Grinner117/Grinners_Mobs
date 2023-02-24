@@ -61,6 +61,9 @@ public class GrinnersMobs {
             SpawnPlacements.register(ModEntityTypes.ENTLINGOAK.get(),
                     SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
                     Monster::checkMonsterSpawnRules);
+            SpawnPlacements.register(ModEntityTypes.ENTOAK.get(),
+                    SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                    Monster::checkMonsterSpawnRules);
         });
     }
 
@@ -73,7 +76,7 @@ public class GrinnersMobs {
             event.accept(ModItems.MONSTERFABRIC);
             event.accept(ModItems.SPIKEPROJECTILE);
             event.accept(ModItems.ENTLINGCORE);
-
+            event.accept(ModItems.ENTBARK);
 
             event.accept(ModItems.LIGHTMONSTERBONEARMOR_BOOTS);
             event.accept(ModItems.LIGHTMONSTERBONEARMOR_CHESTPLATE);
@@ -89,6 +92,11 @@ public class GrinnersMobs {
             event.accept(ModItems.ENTLINGARMOR_CHESTPLATE);
             event.accept(ModItems.ENTLINGARMOR_LEGGINGS);
             event.accept(ModItems.ENTLINGARMOR_BOOTS);
+
+            event.accept(ModItems.ENTARMOR_HELMET);
+            event.accept(ModItems.ENTARMOR_CHESTPLATE);
+            event.accept(ModItems.ENTARMOR_LEGGINGS);
+            event.accept(ModItems.ENTARMOR_BOOTS);
 
             event.accept(ModItems.DEATHSPIKE_SPAWN_EGG);
             event.accept(ModItems.PURETITANLANKY_SPAWN_EGG);
