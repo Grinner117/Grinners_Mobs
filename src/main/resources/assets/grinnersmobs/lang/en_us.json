@@ -4,13 +4,15 @@
   "item.grinnersmobs.deathspike_spawn_egg": "Death Spike Spawn Egg",
   "item.grinnersmobs.entlingoak_spawn_egg": "Entling Oak Spawn Egg",
   "item.grinnersmobs.entoak_spawn_egg": "Ent Oak Spawn Egg",
-
+  "item.grinnersmobs.childrat_spawn_egg": "Small Rat Spawn Egg",
 
   "entity.grinnersmobs.puretitanvillager": "Pure Titan",
   "entity.grinnersmobs.puretitanlanky": "Pure Titan",
   "entity.grinnersmobs.deathspike": "Death Spike",
   "entity.grinnersmobs.entlingoak": "Entling",
   "entity.grinnersmobs.entoak": "Ent",
+  "entity.grinnersmobs.childrat": "Small Rat",
+
 
   "item.grinnersmobs.monsterflesh": "Monster Flesh",
   "item.grinnersmobs.monsterbone": "Monster Bone",

@@ -40,6 +40,9 @@ public class ModItems {
     public static final RegistryObject<Item> DEATHSPIKE_SPAWN_EGG = ITEMS.register("deathspike_spawn_egg",
             () -> new ForgeSpawnEggItem(ModEntityTypes.DEATHSPIKE, 0x54b541, 0xF4732e,
                     new Item.Properties()));
+    public static final RegistryObject<Item> CHILDRAT_SPAWN_EGG = ITEMS.register("childrat_spawn_egg",
+            () -> new ForgeSpawnEggItem(ModEntityTypes.CHILDRAT, 0x54bfff, 0xF4732e,
+                    new Item.Properties()));
 
 
     public static final RegistryObject<Item> MONSTERFLESH = ITEMS.register("monsterflesh",

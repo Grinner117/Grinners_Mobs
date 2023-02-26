@@ -1,12 +1,7 @@
 package net.grinner117.grinnersmobs;
 
 import net.grinner117.grinnersmobs.entity.ModEntityTypes;
-import net.grinner117.grinnersmobs.entity.client.DeathSpikeRenderer;
-import net.grinner117.grinnersmobs.entity.client.PureTitanLankyRenderer;
-import net.grinner117.grinnersmobs.entity.client.PureTitanVillagerRenderer;
-import net.grinner117.grinnersmobs.entity.client.SpikeProjectileRenderer;
-import net.grinner117.grinnersmobs.entity.client.EntlingOakRenderer;
-import net.grinner117.grinnersmobs.entity.client.EntOakRenderer;
+import net.grinner117.grinnersmobs.entity.client.*;
 import net.grinner117.grinnersmobs.item.ModCreativeModeTab;
 import net.grinner117.grinnersmobs.item.ModItems;
 import net.minecraft.client.renderer.entity.EntityRenderers;
@@ -64,6 +59,9 @@ public class GrinnersMobs {
             SpawnPlacements.register(ModEntityTypes.ENTOAK.get(),
                     SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
                     Monster::checkMonsterSpawnRules);
+            SpawnPlacements.register(ModEntityTypes.CHILDRAT.get(),
+                    SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                    Monster::checkMonsterSpawnRules);
         });
     }
 
@@ -103,6 +101,7 @@ public class GrinnersMobs {
             event.accept(ModItems.PURETITANVILLAGER_SPAWN_EGG);
             event.accept(ModItems.ENTLINGOAK_SPAWN_EGG);
             event.accept(ModItems.ENTOAK_SPAWN_EGG);
+            event.accept(ModItems.CHILDRAT_SPAWN_EGG);
 
         }
     }
@@ -115,6 +114,7 @@ public class GrinnersMobs {
             EntityRenderers.register(ModEntityTypes.DEATHSPIKE.get(), DeathSpikeRenderer::new);
             EntityRenderers.register(ModEntityTypes.ENTLINGOAK.get(), EntlingOakRenderer::new);
             EntityRenderers.register(ModEntityTypes.ENTOAK.get(), EntOakRenderer::new);
+            EntityRenderers.register(ModEntityTypes.CHILDRAT.get(), ChildRatRenderer::new);
             EntityRenderers.register(ModEntityTypes.SPIKEPROJECTILE.get(), SpikeProjectileRenderer::new);
         }
     }
