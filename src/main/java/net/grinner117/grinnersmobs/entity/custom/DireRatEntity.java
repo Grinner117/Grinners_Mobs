@@ -9,7 +9,9 @@ import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
-import net.minecraft.world.entity.ai.goal.*;
+import net.minecraft.world.entity.ai.goal.FloatGoal;
+import net.minecraft.world.entity.ai.goal.MeleeAttackGoal;
+import net.minecraft.world.entity.ai.goal.WaterAvoidingRandomStrollGoal;
 import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
 import net.minecraft.world.entity.ai.navigation.PathNavigation;
 import net.minecraft.world.entity.ai.navigation.WallClimberNavigation;
@@ -26,12 +28,12 @@ import software.bernie.geckolib.core.animation.*;
 import software.bernie.geckolib.core.object.PlayState;
 
 
-public class ChildRatEntity extends Monster implements GeoEntity {
+public class DireRatEntity extends Monster implements GeoEntity {
 
     private AnimatableInstanceCache factory = new SingletonAnimatableInstanceCache(this);
-    public ChildRatEntity(EntityType<? extends Monster> EntityType, Level Level) {
+    public DireRatEntity(EntityType<? extends Monster> EntityType, Level Level) {
         super(EntityType, Level);
-        this.xpReward = 15;
+        this.xpReward = 40;
     }
 
     private static final EntityDataAccessor<Byte> DATA_FLAGS_ID = SynchedEntityData.defineId(Spider.class, EntityDataSerializers.BYTE);
@@ -40,8 +42,8 @@ public class ChildRatEntity extends Monster implements GeoEntity {
     public static final int REINFORCEMENT_RANGE_MIN = 7;
     public static AttributeSupplier setAttributes() {
         return Monster.createMonsterAttributes()
-                .add(Attributes.MAX_HEALTH, 2.0D)
-                .add(Attributes.ATTACK_DAMAGE, 1.0D)
+                .add(Attributes.MAX_HEALTH, 12.0D)
+                .add(Attributes.ATTACK_DAMAGE, 4.0D)
                 .add(Attributes.ATTACK_SPEED, 1.0F)
                 .add(Attributes.MOVEMENT_SPEED, 1.0F)
                 .add(Attributes.SPAWN_REINFORCEMENTS_CHANCE, 132.0F)
@@ -49,9 +51,9 @@ public class ChildRatEntity extends Monster implements GeoEntity {
     }
     @Override
     protected void registerGoals() {
-        this.goalSelector.addGoal(2, new MeleeAttackGoal(this, 0.3F, false));
+        this.goalSelector.addGoal(2, new MeleeAttackGoal(this, 0.35F, false));
         this.goalSelector.addGoal(1, new FloatGoal(this));
-        this.goalSelector.addGoal(3, new WaterAvoidingRandomStrollGoal(this, 0.4f ));
+        this.goalSelector.addGoal(3, new WaterAvoidingRandomStrollGoal(this, 0.45f ));
 
         this.targetSelector.addGoal(1, new NearestAttackableTargetGoal<>(this, Player.class, true));
         this.targetSelector.addGoal(2, new NearestAttackableTargetGoal<>(this, AbstractVillager.class, false));

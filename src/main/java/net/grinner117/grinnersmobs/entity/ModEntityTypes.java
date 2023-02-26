@@ -45,6 +45,11 @@ public class ModEntityTypes {
                     () -> EntityType.Builder.of(ChildRatEntity::new, MobCategory.MONSTER)
                             .sized(0.5F, 0.5F).clientTrackingRange(20)
                             .build(new ResourceLocation(GrinnersMobs.MODID,"childrat").toString()));
+    public static final RegistryObject<EntityType<DireRatEntity>> DIRERAT =
+            ENTITY_TYPES.register("direrat",
+                    () -> EntityType.Builder.of(DireRatEntity::new, MobCategory.MONSTER)
+                            .sized(1.0F, 1.0F).clientTrackingRange(30)
+                            .build(new ResourceLocation(GrinnersMobs.MODID,"direrat").toString()));
 
     public static void register(IEventBus eventBus) {
         ENTITY_TYPES.register(eventBus);

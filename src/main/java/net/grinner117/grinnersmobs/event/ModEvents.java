@@ -19,6 +19,8 @@ public class ModEvents {
             event.put(ModEntityTypes.ENTLINGOAK.get(), EntlingOakEntity.setAttributes());
             event.put(ModEntityTypes.ENTOAK.get(), EntOakEntity.setAttributes());
             event.put(ModEntityTypes.CHILDRAT.get(), ChildRatEntity.setAttributes());
+            event.put(ModEntityTypes.DIRERAT.get(), DireRatEntity.setAttributes());
+
 
         }
     }
