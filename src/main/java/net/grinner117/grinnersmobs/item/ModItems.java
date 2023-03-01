@@ -46,6 +46,9 @@ public class ModItems {
     public static final RegistryObject<Item> DIRERAT_SPAWN_EGG = ITEMS.register("direrat_spawn_egg",
             () -> new ForgeSpawnEggItem(ModEntityTypes.DIRERAT, 0x54bfff, 0xF473f2e,
                     new Item.Properties()));
+    public static final RegistryObject<Item> BROODRAT_SPAWN_EGG = ITEMS.register("broodrat_spawn_egg",
+            () -> new ForgeSpawnEggItem(ModEntityTypes.BROODRAT, 0x54bfff, 0xF473f2e,
+                    new Item.Properties()));
 
 
     public static final RegistryObject<Item> MONSTERFLESH = ITEMS.register("monsterflesh",
@@ -55,7 +58,15 @@ public class ModItems {
                             .effect(() -> new MobEffectInstance(MobEffects.WEAKNESS, 100, 0), 0.5F)
                             .effect(() -> new MobEffectInstance(MobEffects.HARM, 30, 0), 0.5F)
                             .build())));
+
+    public static final RegistryObject<Item> RATTAIL = ITEMS.register("rattail",
+            () -> new Item(new Item.Properties()
+                    .food(new FoodProperties.Builder().nutrition(1).saturationMod(1)
+                            .effect(() -> new MobEffectInstance(MobEffects.HARM, 10, 0), 0.7F)
+                            .build())));
     public static final RegistryObject<Item> MONSTERBONE = ITEMS.register("monsterbone",
+            () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> RATTAILBUNDLE = ITEMS.register("rattailbundle",
             () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> MONSTERLEATHER = ITEMS.register("monsterleather",
             () -> new Item(new Item.Properties()));
@@ -106,6 +117,9 @@ public class ModItems {
     public static final RegistryObject<ArmorItem> ENTARMOR_BOOTS = ITEMS.register("entarmor_boots",
             () -> new DamageRes4_Perk(ArmorTiers.ENTARMOR, EquipmentSlot.FEET, props()));
 
+    public static final RegistryObject<ArmorItem> RATARMOR_LEGGINGS = ITEMS.register("ratarmor_leggings",
+            () -> new Damage3_Perk(ArmorTiers.RATARMOR, EquipmentSlot.LEGS, props()));
+
 
 private static Item.Properties props(){return new Item.Properties(); }
        public static void register(IEventBus eventBus) {
@@ -123,7 +137,7 @@ public static final ArmorMaterial LIGHTMONSTERBONEARMOR = new ModArmorMaterial(
     public static final ArmorMaterial DEATHSPIKEARMOR = new ModArmorMaterial(
             "deathspikearmor",
             2200,
-            new int[]{10,16,14,10},
+            new int[]{9,13,12,9},
             300,
             SoundEvents.ARMOR_EQUIP_CHAIN,
             8.0f, 0.3f,
@@ -131,7 +145,7 @@ public static final ArmorMaterial LIGHTMONSTERBONEARMOR = new ModArmorMaterial(
     public static final ArmorMaterial ENTLINGARMOR = new ModArmorMaterial(
             "entlingarmor",
             2400,
-            new int[]{7,14,13,7},
+            new int[]{7,13,12,7},
             260,
             SoundEvents.ARMOR_EQUIP_TURTLE,
             16.0f, 6.0f,
@@ -139,10 +153,20 @@ public static final ArmorMaterial LIGHTMONSTERBONEARMOR = new ModArmorMaterial(
     public static final ArmorMaterial ENTARMOR = new ModArmorMaterial(
             "entarmor",
             3000,
-            new int[]{6,13,11,6},
+            new int[]{8,14,13,8},
             300,
             SoundEvents.ARMOR_EQUIP_TURTLE,
             20.0f, 8.0f,
             () -> Ingredient.of(ModItems.ENTBARK.get()));
+
+    public static final ArmorMaterial RATARMOR = new ModArmorMaterial(
+            "ratarmor",
+            864,
+            new int[]{6,6,6,6},
+            300,
+            SoundEvents.ARMOR_EQUIP_LEATHER,
+            4.0f, 0.0f,
+            () -> Ingredient.of(ModItems.RATTAIL.get()));
+
 }
 }

@@ -66,6 +66,9 @@ public class GrinnersMobs {
             SpawnPlacements.register(ModEntityTypes.DIRERAT.get(),
                     SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
                     Monster::checkMonsterSpawnRules);
+            SpawnPlacements.register(ModEntityTypes.BROODRAT.get(),
+                    SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                    Monster::checkMonsterSpawnRules);
         });
     }
 
@@ -74,6 +77,9 @@ public class GrinnersMobs {
             event.accept(ModItems.MONSTERBONE);
             event.accept(ModItems.MONSTERLEATHER);
             event.accept(ModItems.MONSTERFLESH);
+            event.accept(ModItems.RATTAIL);
+            event.accept(ModItems.RATTAILBUNDLE);
+
             event.accept(ModItems.MONSTERFURTUFT);
             event.accept(ModItems.MONSTERFABRIC);
             event.accept(ModItems.SPIKEPROJECTILE);
@@ -84,6 +90,8 @@ public class GrinnersMobs {
             event.accept(ModItems.LIGHTMONSTERBONEARMOR_CHESTPLATE);
             event.accept(ModItems.LIGHTMONSTERBONEARMOR_HELMET);
             event.accept(ModItems.LIGHTMONSTERBONEARMOR_LEGGINGS);
+
+            event.accept(ModItems.RATARMOR_LEGGINGS);
 
             event.accept(ModItems.DEATHSPIKEARMOR_HELMET);
             event.accept(ModItems.DEATHSPIKEARMOR_CHESTPLATE);
@@ -107,7 +115,7 @@ public class GrinnersMobs {
             event.accept(ModItems.ENTOAK_SPAWN_EGG);
             event.accept(ModItems.CHILDRAT_SPAWN_EGG);
             event.accept(ModItems.DIRERAT_SPAWN_EGG);
-
+            event.accept(ModItems.BROODRAT_SPAWN_EGG);
         }
     }
     @Mod.EventBusSubscriber(modid = MODID, bus = Mod.EventBusSubscriber.Bus.MOD)
@@ -120,6 +128,8 @@ public class GrinnersMobs {
             EntityRenderers.register(ModEntityTypes.ENTLINGOAK.get(), EntlingOakRenderer::new);
             EntityRenderers.register(ModEntityTypes.ENTOAK.get(), EntOakRenderer::new);
             EntityRenderers.register(ModEntityTypes.CHILDRAT.get(), ChildRatRenderer::new);
+            EntityRenderers.register(ModEntityTypes.BROODRAT.get(), BroodRatRenderer::new);
+
             EntityRenderers.register(ModEntityTypes.DIRERAT.get(), DireRatRenderer::new);
 
             EntityRenderers.register(ModEntityTypes.SPIKEPROJECTILE.get(), SpikeProjectileRenderer::new);

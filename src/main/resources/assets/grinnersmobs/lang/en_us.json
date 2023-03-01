@@ -6,6 +6,8 @@
   "item.grinnersmobs.entoak_spawn_egg": "Ent Oak Spawn Egg",
   "item.grinnersmobs.childrat_spawn_egg": "Small Rat Spawn Egg",
   "item.grinnersmobs.direrat_spawn_egg": "Dire Rat Spawn Egg",
+  "item.grinnersmobs.broodrat_spawn_egg": "Brood Rat Spawn Egg",
+
 
   "entity.grinnersmobs.puretitanvillager": "Pure Titan",
   "entity.grinnersmobs.puretitanlanky": "Pure Titan",
@@ -13,7 +15,11 @@
   "entity.grinnersmobs.entlingoak": "Entling",
   "entity.grinnersmobs.entoak": "Ent",
   "entity.grinnersmobs.childrat": "Small Rat",
+  "entity.grinnersmobs.broodrat": "Brood Rat",
   "entity.grinnersmobs.direrat": "Dire Rat",
+
+  "item.grinnersmobs.rattail": "Rat's Tail",
+  "item.grinnersmobs.rattailbundle": "Rat's Tail Bundle",
 
   "item.grinnersmobs.monsterflesh": "Monster Flesh",
   "item.grinnersmobs.monsterbone": "Monster Bone",
@@ -39,8 +45,11 @@
   "item.grinnersmobs.entlingarmor_chestplate": "Entling Chestplate",
   "item.grinnersmobs.entlingarmor_leggings": "Entling Leggings",
   "item.grinnersmobs.entlingarmor_boots": "Entling Boots",
+
   "item.grinnersmobs.entarmor_helmet": "Ent Helmet",
   "item.grinnersmobs.entarmor_chestplate": "Ent Chestplate",
   "item.grinnersmobs.entarmor_leggings": "Ent Leggings",
-  "item.grinnersmobs.entarmor_boots": "Ent Boots"
+  "item.grinnersmobs.entarmor_boots": "Ent Boots",
+
+  "item.grinnersmobs.ratarmor_leggings": "Rat Leggings"
 }

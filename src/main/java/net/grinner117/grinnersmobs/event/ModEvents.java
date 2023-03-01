@@ -20,6 +20,8 @@ public class ModEvents {
             event.put(ModEntityTypes.ENTOAK.get(), EntOakEntity.setAttributes());
             event.put(ModEntityTypes.CHILDRAT.get(), ChildRatEntity.setAttributes());
             event.put(ModEntityTypes.DIRERAT.get(), DireRatEntity.setAttributes());
+            event.put(ModEntityTypes.BROODRAT.get(), BroodRatEntity.setAttributes());
+
 
 
         }

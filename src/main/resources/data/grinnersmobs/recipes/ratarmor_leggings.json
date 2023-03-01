@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "$": {
+      "item": "grinnersmobs:monsterfabric"
+    },
+    "#": {
+      "item": "grinnersmobs:rattailbundle"
+    }
+  },
+  "pattern": [
+    "#$#",
+    "# #",
+    "# #"
+  ],
+  "result": {
+    "item": "grinnersmobs:ratarmor_leggings"
+  }
+}

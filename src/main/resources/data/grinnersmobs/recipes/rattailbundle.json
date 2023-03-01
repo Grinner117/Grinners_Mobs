@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "gold_ingot",
+  "key": {
+    "#": {
+      "item": "grinnersmobs:rattail"
+    }
+  },
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "result": {
+    "item": "grinnersmobs:rattailbundle"
+  }
+}
