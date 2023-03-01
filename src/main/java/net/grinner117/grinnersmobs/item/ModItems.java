@@ -118,7 +118,7 @@ public class ModItems {
             () -> new DamageRes4_Perk(ArmorTiers.ENTARMOR, EquipmentSlot.FEET, props()));
 
     public static final RegistryObject<ArmorItem> RATARMOR_LEGGINGS = ITEMS.register("ratarmor_leggings",
-            () -> new Damage3_Perk(ArmorTiers.RATARMOR, EquipmentSlot.LEGS, props()));
+            () -> new Rat_Perk(ArmorTiers.RATARMOR, EquipmentSlot.LEGS, props()));
 
 
 private static Item.Properties props(){return new Item.Properties(); }

@@ -25,7 +25,7 @@ public class Damage3_Perk extends ArmorItem {
     @Override
     public void onArmorTick(ItemStack stack, Level world, Player player) {
         if (!world.isClientSide()) {
-            player.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 200, 3));
+            player.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 200, 2));
         }
 
     }
@@ -33,7 +33,7 @@ public class Damage3_Perk extends ArmorItem {
     @Override
     public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> componets, TooltipFlag flag){
         if(Screen.hasShiftDown()){
-            componets.add(Component.literal("Regen 2, Slow Movement 1").withStyle(ChatFormatting.DARK_AQUA));
+            componets.add(Component.literal("Damage 3").withStyle(ChatFormatting.DARK_AQUA));
         } else{
             componets.add(Component.literal("Shift Right click for more Info").withStyle(ChatFormatting.YELLOW));
         }
