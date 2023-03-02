@@ -50,23 +50,29 @@ public class GrinnersMobs {
             SpawnPlacements.register(ModEntityTypes.PURETITANLANKY.get(),
                     SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
                     Monster::checkMonsterSpawnRules);
+
             SpawnPlacements.register(ModEntityTypes.DEATHSPIKE.get(),
                     SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
                     Monster::checkMonsterSpawnRules);
+
             SpawnPlacements.register(ModEntityTypes.ENTLINGOAK.get(),
                     SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
                     Monster::checkMonsterSpawnRules);
             SpawnPlacements.register(ModEntityTypes.ENTOAK.get(),
                     SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
                     Monster::checkMonsterSpawnRules);
+
             SpawnPlacements.register(ModEntityTypes.CHILDRAT.get(),
                     SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
                     Monster::checkMonsterSpawnRules);
-
             SpawnPlacements.register(ModEntityTypes.DIRERAT.get(),
                     SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
                     Monster::checkMonsterSpawnRules);
             SpawnPlacements.register(ModEntityTypes.BROODRAT.get(),
+                    SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                    Monster::checkMonsterSpawnRules);
+
+            SpawnPlacements.register(ModEntityTypes.FIRENEWT.get(),
                     SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
                     Monster::checkMonsterSpawnRules);
         });
@@ -116,6 +122,8 @@ public class GrinnersMobs {
             event.accept(ModItems.CHILDRAT_SPAWN_EGG);
             event.accept(ModItems.DIRERAT_SPAWN_EGG);
             event.accept(ModItems.BROODRAT_SPAWN_EGG);
+            event.accept(ModItems.FIRENEWT_SPAWN_EGG);
+
         }
     }
     @Mod.EventBusSubscriber(modid = MODID, bus = Mod.EventBusSubscriber.Bus.MOD)
@@ -124,13 +132,18 @@ public class GrinnersMobs {
         public static void onClientSetup(FMLClientSetupEvent event) {
             EntityRenderers.register(ModEntityTypes.PURETITANVILLAGER.get(), PureTitanVillagerRenderer::new);
             EntityRenderers.register(ModEntityTypes.PURETITANLANKY.get(), PureTitanLankyRenderer::new);
+
             EntityRenderers.register(ModEntityTypes.DEATHSPIKE.get(), DeathSpikeRenderer::new);
+
             EntityRenderers.register(ModEntityTypes.ENTLINGOAK.get(), EntlingOakRenderer::new);
             EntityRenderers.register(ModEntityTypes.ENTOAK.get(), EntOakRenderer::new);
+
             EntityRenderers.register(ModEntityTypes.CHILDRAT.get(), ChildRatRenderer::new);
             EntityRenderers.register(ModEntityTypes.BROODRAT.get(), BroodRatRenderer::new);
-
             EntityRenderers.register(ModEntityTypes.DIRERAT.get(), DireRatRenderer::new);
+
+            EntityRenderers.register(ModEntityTypes.FIRENEWT.get(), FireNewtRenderer::new);
+
 
             EntityRenderers.register(ModEntityTypes.SPIKEPROJECTILE.get(), SpikeProjectileRenderer::new);
         }

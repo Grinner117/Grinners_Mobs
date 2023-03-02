@@ -15,13 +15,17 @@ public class ModEvents {
         public static void entityAttributeEvent(EntityAttributeCreationEvent event) {
             event.put(ModEntityTypes.PURETITANVILLAGER.get(), PureTitanVillagerEntity.setAttributes());
             event.put(ModEntityTypes.PURETITANLANKY.get(), PureTitanLankyEntity.setAttributes());
+
             event.put(ModEntityTypes.DEATHSPIKE.get(), DeathSpikeEntity.setAttributes());
+
             event.put(ModEntityTypes.ENTLINGOAK.get(), EntlingOakEntity.setAttributes());
             event.put(ModEntityTypes.ENTOAK.get(), EntOakEntity.setAttributes());
+
             event.put(ModEntityTypes.CHILDRAT.get(), ChildRatEntity.setAttributes());
             event.put(ModEntityTypes.DIRERAT.get(), DireRatEntity.setAttributes());
             event.put(ModEntityTypes.BROODRAT.get(), BroodRatEntity.setAttributes());
 
+            event.put(ModEntityTypes.FIRENEWT.get(), FireNewtEntity.setAttributes());
 
 
         }

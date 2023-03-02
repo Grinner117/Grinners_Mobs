@@ -7,7 +7,7 @@
   "item.grinnersmobs.childrat_spawn_egg": "Small Rat Spawn Egg",
   "item.grinnersmobs.direrat_spawn_egg": "Dire Rat Spawn Egg",
   "item.grinnersmobs.broodrat_spawn_egg": "Brood Rat Spawn Egg",
-
+  "item.grinnersmobs.firenewt_spawn_egg": "Fire Newt Spawn Egg",
 
   "entity.grinnersmobs.puretitanvillager": "Pure Titan",
   "entity.grinnersmobs.puretitanlanky": "Pure Titan",
@@ -17,6 +17,8 @@
   "entity.grinnersmobs.childrat": "Small Rat",
   "entity.grinnersmobs.broodrat": "Brood Rat",
   "entity.grinnersmobs.direrat": "Dire Rat",
+  "entity.grinnersmobs.firenewt": "Fire Newt",
+
 
   "item.grinnersmobs.rattail": "Rat's Tail",
   "item.grinnersmobs.rattailbundle": "Rat's Tail Bundle",

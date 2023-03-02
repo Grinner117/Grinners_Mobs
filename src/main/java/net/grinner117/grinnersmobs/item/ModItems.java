@@ -49,7 +49,9 @@ public class ModItems {
     public static final RegistryObject<Item> BROODRAT_SPAWN_EGG = ITEMS.register("broodrat_spawn_egg",
             () -> new ForgeSpawnEggItem(ModEntityTypes.BROODRAT, 0x54bfff, 0xF473f2e,
                     new Item.Properties()));
-
+    public static final RegistryObject<Item> FIRENEWT_SPAWN_EGG = ITEMS.register("firenewt_spawn_egg",
+            () -> new ForgeSpawnEggItem(ModEntityTypes.FIRENEWT, 0x54b555, 0xF45552e,
+                    new Item.Properties()));
 
     public static final RegistryObject<Item> MONSTERFLESH = ITEMS.register("monsterflesh",
             () -> new Item(new Item.Properties()

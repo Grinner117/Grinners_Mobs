@@ -4,7 +4,7 @@ plugins {
     id 'net.minecraftforge.gradle' version '5.1.+'
 }
 
-version = '1.19.3 - 1.6'
+version = '1.19.3 - 1.7'
 group = 'net.grinner117.grinnersmobs'
 archivesBaseName = 'grinnersmobs'
 
