@@ -32,7 +32,7 @@ public class Saturation_Perk extends ArmorItem {
     @Override
     public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> componets, TooltipFlag flag){
         if(Screen.hasShiftDown()){
-            componets.add(Component.literal("Saturation_Perk").withStyle(ChatFormatting.DARK_AQUA));
+            componets.add(Component.literal("Saturation").withStyle(ChatFormatting.DARK_AQUA));
         } else{
             componets.add(Component.literal("Shift Right click for more Info").withStyle(ChatFormatting.GREEN));
         }

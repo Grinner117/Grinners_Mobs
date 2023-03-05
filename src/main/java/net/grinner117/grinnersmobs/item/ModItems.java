@@ -134,7 +134,7 @@ public static final ArmorMaterial LIGHTMONSTERBONEARMOR = new ModArmorMaterial(
         new int[]{7,15,12,7},
         200,
         SoundEvents.ARMOR_EQUIP_NETHERITE,
-        12.0f, 0.8f,
+        10.0f, 0.8f,
         () -> Ingredient.of(ModItems.MONSTERLEATHER.get()));
     public static final ArmorMaterial DEATHSPIKEARMOR = new ModArmorMaterial(
             "deathspikearmor",
@@ -148,17 +148,17 @@ public static final ArmorMaterial LIGHTMONSTERBONEARMOR = new ModArmorMaterial(
             "entlingarmor",
             2400,
             new int[]{7,13,12,7},
-            260,
+            200,
             SoundEvents.ARMOR_EQUIP_TURTLE,
-            16.0f, 6.0f,
+            14.0f, 6.0f,
             () -> Ingredient.of(ModItems.ENTBARK.get()));
     public static final ArmorMaterial ENTARMOR = new ModArmorMaterial(
             "entarmor",
-            3000,
-            new int[]{8,14,13,8},
-            300,
+            3117,
+            new int[]{7,13,12,7},
+            200,
             SoundEvents.ARMOR_EQUIP_TURTLE,
-            20.0f, 8.0f,
+            14.0f, 8.0f,
             () -> Ingredient.of(ModItems.ENTBARK.get()));
 
     public static final ArmorMaterial RATARMOR = new ModArmorMaterial(

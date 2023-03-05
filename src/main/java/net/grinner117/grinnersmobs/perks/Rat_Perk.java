@@ -40,7 +40,7 @@ public class Rat_Perk extends ArmorItem {
     @Override
     public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> componets, TooltipFlag flag){
         if(Screen.hasShiftDown()){
-            componets.add(Component.literal("Damage 10").withStyle(ChatFormatting.RED));
+            componets.add(Component.literal("Damage 10, Random Hunger").withStyle(ChatFormatting.RED));
         } else{
             componets.add(Component.literal("Rat's Curse").withStyle(ChatFormatting.DARK_RED));
         }

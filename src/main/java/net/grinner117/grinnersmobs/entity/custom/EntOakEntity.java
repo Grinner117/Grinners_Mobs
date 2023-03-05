@@ -91,6 +91,8 @@ public class EntOakEntity extends Monster implements GeoEntity {
                 .add(Attributes.ATTACK_KNOCKBACK, 15.0D)
                 .add(Attributes.KNOCKBACK_RESISTANCE, 32.0D)
                 .add(Attributes.ARMOR_TOUGHNESS, 32.0D)
+                .add(Attributes.ATTACK_SPEED, 0.5D)
+
                 .build();
     }
 
