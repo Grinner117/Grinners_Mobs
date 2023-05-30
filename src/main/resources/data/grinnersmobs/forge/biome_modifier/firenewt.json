@@ -1,0 +1,16 @@
+{
+  "type": "forge:add_spawns",
+  "biomes": [
+    "minecraft:basalt_deltas",
+    "minecraft:crimson_forest",
+    "minecraft:warped_forest",
+    "minecraft:soul_sand_valley"
+
+  ],
+  "spawners": {
+    "type": "grinnersmobs:firenewt",
+    "weight": 20,
+    "minCount": 3,
+    "maxCount": 8
+  }
+}
