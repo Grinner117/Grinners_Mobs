@@ -47,10 +47,13 @@ import java.util.UUID;
 
 public class EntlingOakEntity extends EntOakEntity implements GeoEntity {
     private AnimatableInstanceCache factory = new SingletonAnimatableInstanceCache(this);
-    public EntlingOakEntity(EntityType<? extends Monster> EntityType, Level Level) {
+
+    public EntlingOakEntity(EntityType<? extends EnderMan> EntityType, Level Level) {
         super(EntityType, Level);
         this.xpReward = 300;
+
     }
+
     public static AttributeSupplier setAttributes() {
         return Monster.createMonsterAttributes()
                 .add(Attributes.MAX_HEALTH, 200.0D)
@@ -60,7 +63,7 @@ public class EntlingOakEntity extends EntOakEntity implements GeoEntity {
                 .add(Attributes.ARMOR, 16.0D)
                 .add(Attributes.ATTACK_KNOCKBACK, 10.0D)
                 .add(Attributes.KNOCKBACK_RESISTANCE, 32.0D)
-                 .add(Attributes.ARMOR_TOUGHNESS, 32.0D)
+                .add(Attributes.ARMOR_TOUGHNESS, 32.0D)
                 .add(Attributes.ATTACK_SPEED, 0.5D)
                 .build();
     }
@@ -81,6 +84,7 @@ public class EntlingOakEntity extends EntOakEntity implements GeoEntity {
         animationState.getController().setAnimation(RawAnimation.begin().then("animation.entling.idle", Animation.LoopType.LOOP));
         return PlayState.CONTINUE;
     }
+
     private PlayState attackPredicate(AnimationState state) {
         if (this.swinging && state.getController().getAnimationState().equals(AnimationController.State.STOPPED)) {
             state.getController().forceAnimationReset();
