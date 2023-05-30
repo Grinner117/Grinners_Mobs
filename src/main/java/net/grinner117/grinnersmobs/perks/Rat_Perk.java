@@ -31,7 +31,7 @@ public class Rat_Perk extends ArmorItem {
     @Override
     public void onArmorTick(ItemStack stack, Level world, Player player) {
         if (!world.isClientSide()) {
-            player.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 200, 9));
+            player.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 200, 9,false, false, true));
             if (world.getGameTime() % (10000) == 0) {
                 player.addEffect(new MobEffectInstance(effectTable.get(new Random().nextInt(effectTable.size())), 800, new Random().nextInt(20)));
             }

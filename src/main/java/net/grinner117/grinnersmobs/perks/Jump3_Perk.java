@@ -25,7 +25,7 @@ public class Jump3_Perk extends ArmorItem {
     @Override
     public void onArmorTick(ItemStack stack, Level world, Player player) {
         if (!world.isClientSide()) {
-            player.addEffect(new MobEffectInstance(MobEffects.JUMP, 200, 3));
+            player.addEffect(new MobEffectInstance(MobEffects.JUMP, 200, 3,false, false, true));
         }
     }
 

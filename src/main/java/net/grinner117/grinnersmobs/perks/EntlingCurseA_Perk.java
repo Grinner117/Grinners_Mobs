@@ -25,8 +25,8 @@ public class EntlingCurseA_Perk extends ArmorItem {
     @Override
     public void onArmorTick(ItemStack stack, Level world, Player player) {
         if (!world.isClientSide()) {
-            player.addEffect(new MobEffectInstance(MobEffects.SATURATION, 200, 1));
-            player.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 200, 1));
+            player.addEffect(new MobEffectInstance(MobEffects.SATURATION, 200, 1,false, false, true));
+            player.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 200, 1,false, false, true));
 
         }
 

@@ -25,7 +25,6 @@ import static net.grinner117.grinnersmobs.GrinnersMobs.MODID;
 public class GrinnersMobs {
     // Define mod id in a common place for everything to reference
     public static final String MODID = "grinnersmobs";
-
     // Directly reference a slf4j logger
     public GrinnersMobs() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();

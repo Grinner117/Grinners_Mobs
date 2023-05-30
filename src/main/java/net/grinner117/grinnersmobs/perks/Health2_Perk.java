@@ -18,7 +18,7 @@ public class Health2_Perk extends ArmorItem {
     @Override
     public void onArmorTick(ItemStack stack, Level world, Player player) {
         if (!world.isClientSide()) {
-            player.addEffect(new MobEffectInstance(MobEffects.HEALTH_BOOST, 240, 2));
+            player.addEffect(new MobEffectInstance(MobEffects.HEALTH_BOOST, 240, 2,false, false, true));
         }
     }
 }

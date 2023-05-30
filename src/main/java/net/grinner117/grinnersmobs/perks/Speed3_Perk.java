@@ -23,7 +23,7 @@ public class Speed3_Perk extends ArmorItem {
     @Override
     public void onArmorTick(ItemStack stack, Level world, Player player) {
         if (!world.isClientSide()) {
-            player.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 200, 3));
+            player.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 200, 3,false, false, true));
         }
 
     }

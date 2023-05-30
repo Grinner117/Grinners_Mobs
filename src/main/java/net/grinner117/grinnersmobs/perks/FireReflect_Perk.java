@@ -30,7 +30,7 @@ public class FireReflect_Perk extends ArmorItem implements IDamageHandlingArmor{
     @Override
     public void onArmorTick(ItemStack stack, Level world, Player player) {
         if (!world.isClientSide()) {
-            player.addEffect(new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 250, 3));
+            player.addEffect(new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 250, 3,false, false, true));
         }
     }
     @SubscribeEvent

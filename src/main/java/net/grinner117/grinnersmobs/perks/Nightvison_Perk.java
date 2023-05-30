@@ -27,15 +27,10 @@ public class Nightvison_Perk extends ArmorItem {
         super(material, slot, properties);
 
     }
-    public static ArrayList<MobEffect> effectTable = new ArrayList<>(Arrays.asList(
-            MobEffects.NIGHT_VISION
-    ));
     @Override
     public void onArmorTick(ItemStack stack, Level world, Player player) {
         if (!world.isClientSide()) {
-            if (world.getGameTime() % (20 * 2) == 0) {
-                player.addEffect(new MobEffectInstance(effectTable.get(new Random().nextInt(effectTable.size())), 40 * 20, new Random().nextInt(10)));
-            }
+            player.addEffect(new MobEffectInstance(MobEffects.NIGHT_VISION, 200, 3,false, false, true));
         }
     }
 

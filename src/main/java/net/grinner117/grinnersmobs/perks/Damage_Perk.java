@@ -25,7 +25,7 @@ public class Damage_Perk extends ArmorItem {
     @Override
     public void onArmorTick(ItemStack stack, Level world, Player player) {
         if (!world.isClientSide()) {
-            player.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 200, 0));
+            player.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 200, 0,false, false, true));
         }
 
     }

@@ -24,7 +24,7 @@ public class Regeneration2_Perk extends ArmorItem {
     @Override
     public void onArmorTick(ItemStack stack, Level world, Player player) {
         if (!world.isClientSide()) {
-            player.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 200, 1));
+            player.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 200, 1,false, false, true));
         }
     }
     @Override

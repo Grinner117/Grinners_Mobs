@@ -26,7 +26,7 @@ import software.bernie.geckolib.core.animation.*;
 import software.bernie.geckolib.core.object.PlayState;
 
 
-public class ChildRatEntity extends Monster implements GeoEntity {
+public class ChildRatEntity extends BroodRatEntity implements GeoEntity {
 
     private AnimatableInstanceCache factory = new SingletonAnimatableInstanceCache(this);
     public ChildRatEntity(EntityType<? extends Monster> EntityType, Level Level) {
