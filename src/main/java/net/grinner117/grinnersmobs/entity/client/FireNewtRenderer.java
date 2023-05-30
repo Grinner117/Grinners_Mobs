@@ -13,7 +13,7 @@ import software.bernie.geckolib.renderer.GeoEntityRenderer;
 public class FireNewtRenderer extends GeoEntityRenderer<FireNewtEntity> {
     public FireNewtRenderer(EntityRendererProvider.Context renderManager) {
         super(renderManager, new FireNewtModel());
-        this.shadowRadius = 1.0f;
+        this.shadowRadius = 0.4f;
         this.scaleWidth = 1.25f;
         this.scaleHeight = 1.25f;
 

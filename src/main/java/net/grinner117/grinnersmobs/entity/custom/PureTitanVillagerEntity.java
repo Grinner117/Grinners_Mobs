@@ -6,6 +6,7 @@ import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
+import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
@@ -28,9 +29,6 @@ import software.bernie.geckolib.core.object.PlayState;
 
 
 public class PureTitanVillagerEntity extends Monster implements GeoEntity {
-
-    private static final float KNOCKBACK_RESISTANCE = 1.0F;
-    private static final float ATTACK_KNOCKBACK = 1.5F;
     private AnimatableInstanceCache factory = new SingletonAnimatableInstanceCache(this);
 
     public PureTitanVillagerEntity(EntityType<? extends Monster> EntityType, Level Level) {
@@ -114,10 +112,8 @@ public class PureTitanVillagerEntity extends Monster implements GeoEntity {
             state.getController().setAnimation(RawAnimation.begin().then("animation.puretitanvillager.attack", Animation.LoopType.PLAY_ONCE));
             this.swinging = false;
         }
-
         return PlayState.CONTINUE;
     }
-
 
     @Override
     public void registerControllers(AnimatableManager.ControllerRegistrar controllers) {
@@ -131,6 +127,8 @@ public class PureTitanVillagerEntity extends Monster implements GeoEntity {
         return factory;
     }
 
+    //sound
+
     protected void playStepSound(BlockPos p_34316_, BlockState p_34317_) {
         this.playSound(SoundEvents.GRAVEL_BREAK, 4.0F, 0.01F);
     }
@@ -142,11 +140,11 @@ public class PureTitanVillagerEntity extends Monster implements GeoEntity {
         return SoundEvents.ENDERMAN_DEATH;
     }
 
-    protected SoundEvent getStepSound() {
-        return SoundEvents.GRAVEL_BREAK;
-    }
+    protected SoundEvent getHurtSound(DamageSource p_34368_) {
+        return SoundEvents.VILLAGER_HURT;
 
+    }
     protected float getSoundVolume() {
-        return 15.0F;
+        return 4.0F;
     }
 }
