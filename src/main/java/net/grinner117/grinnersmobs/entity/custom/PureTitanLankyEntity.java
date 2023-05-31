@@ -3,51 +3,53 @@ package net.grinner117.grinnersmobs.entity.custom;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.level.Level;
-import software.bernie.geckolib.animatable.GeoEntity;
-import software.bernie.geckolib.core.animatable.instance.AnimatableInstanceCache;
-import software.bernie.geckolib.core.animatable.instance.SingletonAnimatableInstanceCache;
-import software.bernie.geckolib.core.animation.*;
-import software.bernie.geckolib.core.object.PlayState;
+import software.bernie.geckolib3.core.AnimationState;
+import software.bernie.geckolib3.core.IAnimatable;
+import software.bernie.geckolib3.core.PlayState;
+import software.bernie.geckolib3.core.builder.AnimationBuilder;
+import software.bernie.geckolib3.core.controller.AnimationController;
+import software.bernie.geckolib3.core.event.predicate.AnimationEvent;
+import software.bernie.geckolib3.core.manager.AnimationData;
+import software.bernie.geckolib3.core.manager.AnimationFactory;
+import software.bernie.geckolib3.util.GeckoLibUtil;
 
 
-public class PureTitanLankyEntity extends PureTitanVillagerEntity implements GeoEntity {
-    private AnimatableInstanceCache factory = new SingletonAnimatableInstanceCache(this);
+public class PureTitanLankyEntity extends PureTitanVillagerEntity implements IAnimatable {
+    AnimationFactory manager = GeckoLibUtil.createFactory(this);
     public PureTitanLankyEntity(EntityType<? extends Monster> EntityType, Level Level) {
         super(EntityType, Level);
         this.xpReward = 300;
     }
 
-    @Override
-    public void registerControllers(AnimatableManager.ControllerRegistrar controllers) {
-        controllers.add(new AnimationController(this, "controller",
-                0, this::predicate));
-        controllers.add(new AnimationController(this, "attackController",
-                0, this::attackPredicate));
-
+    private <E extends IAnimatable> PlayState predicate(AnimationEvent<E> event) {
+        if (event.isMoving()) {
+            event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.puretitanlanky.walk", true));
+            return PlayState.CONTINUE;
+        }
+        event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.puretitanlanky.idle", true));
+        return PlayState.CONTINUE;
     }
-        private PlayState predicate(AnimationState animationState) {
-            if(animationState.isMoving()) {
-                animationState.getController().setAnimation(RawAnimation.begin().then("animation.puretitanlanky.walk", Animation.LoopType.LOOP));
-                return PlayState.CONTINUE;
-            }
 
-            animationState.getController().setAnimation(RawAnimation.begin().then("animation.puretitanlanky.idle", Animation.LoopType.LOOP));
-            return PlayState.CONTINUE;
+    private PlayState attackPredicate(AnimationEvent event) {
+        if (this.swinging && event.getController().getAnimationState().equals(AnimationState.Stopped)) {
+            event.getController().markNeedsReload();
+            event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.puretitanlanky.attack", false));
+            this.swinging = false;
         }
+        return PlayState.CONTINUE;
+    }
 
-        private PlayState attackPredicate(AnimationState state) {
-            if(this.swinging && state.getController().getAnimationState().equals(AnimationController.State.STOPPED)) {
-                state.getController().forceAnimationReset();
-                state.getController().setAnimation(RawAnimation.begin()
-                        .then("animation.puretitanlanky.attack", Animation.LoopType.PLAY_ONCE));
-                this.swinging = false;
-            }
 
-            return PlayState.CONTINUE;
-        }
+    @Override
+    public void registerControllers(AnimationData data) {
+        data.addAnimationController(new AnimationController(this, "controller",
+                0, this::predicate));
+        data.addAnimationController(new AnimationController(this, "attackController",
+                0, this::attackPredicate));
+    }
 
-          @Override
-        public AnimatableInstanceCache getAnimatableInstanceCache() {
-              return factory;
-          }
+    @Override
+    public AnimationFactory getFactory() {
+        return manager;
+    }
 }

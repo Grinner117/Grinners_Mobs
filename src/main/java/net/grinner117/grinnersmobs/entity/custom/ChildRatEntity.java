@@ -5,10 +5,9 @@ import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.level.Level;
-import software.bernie.geckolib.animatable.GeoEntity;
 
 
-public class ChildRatEntity extends BroodRatEntity implements GeoEntity {
+public class ChildRatEntity extends BroodRatEntity {
 
     public ChildRatEntity(EntityType<? extends Monster> EntityType, Level Level) {
         super(EntityType, Level);

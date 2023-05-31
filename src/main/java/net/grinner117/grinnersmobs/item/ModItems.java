@@ -25,36 +25,36 @@ public class ModItems {
             DeferredRegister.create(ForgeRegistries.ITEMS, GrinnersMobs.MODID);
     public static final RegistryObject<Item> PURETITANLANKY_SPAWN_EGG = ITEMS.register("puretitanlanky_spawn_egg",
             () -> new ForgeSpawnEggItem(ModEntityTypes.PURETITANLANKY, 0x22b541, 0x19732e,
-                    new Item.Properties()));
+                    new Item.Properties().tab(ModCreativeModeTab.GRINNERSTAB)));
 
     public static final RegistryObject<Item> PURETITANVILLAGER_SPAWN_EGG = ITEMS.register("puretitanvillager_spawn_egg",
             () -> new ForgeSpawnEggItem(ModEntityTypes.PURETITANVILLAGER, 0x22b841, 0x19782e,
-                    new Item.Properties()));
+                    new Item.Properties().tab(ModCreativeModeTab.GRINNERSTAB)));
 
     public static final RegistryObject<Item> ENTLINGOAK_SPAWN_EGG = ITEMS.register("entlingoak_spawn_egg",
             () -> new ForgeSpawnEggItem(ModEntityTypes.ENTLINGOAK, 0x22b841, 0xF4732e,
-                    new Item.Properties()));
+                    new Item.Properties().tab(ModCreativeModeTab.GRINNERSTAB)));
     public static final RegistryObject<Item> ENTOAK_SPAWN_EGG = ITEMS.register("entoak_spawn_egg",
             () -> new ForgeSpawnEggItem(ModEntityTypes.ENTOAK, 0x22b841, 0xF7F2e,
-                    new Item.Properties()));
+                    new Item.Properties().tab(ModCreativeModeTab.GRINNERSTAB)));
     public static final RegistryObject<Item> DEATHSPIKE_SPAWN_EGG = ITEMS.register("deathspike_spawn_egg",
             () -> new ForgeSpawnEggItem(ModEntityTypes.DEATHSPIKE, 0x54b541, 0xF4732e,
-                    new Item.Properties()));
+                    new Item.Properties().tab(ModCreativeModeTab.GRINNERSTAB)));
     public static final RegistryObject<Item> CHILDRAT_SPAWN_EGG = ITEMS.register("childrat_spawn_egg",
             () -> new ForgeSpawnEggItem(ModEntityTypes.CHILDRAT, 0x54bfff, 0xF4732e,
-                    new Item.Properties()));
+                    new Item.Properties().tab(ModCreativeModeTab.GRINNERSTAB)));
     public static final RegistryObject<Item> DIRERAT_SPAWN_EGG = ITEMS.register("direrat_spawn_egg",
             () -> new ForgeSpawnEggItem(ModEntityTypes.DIRERAT, 0x54bfff, 0xF473f2e,
-                    new Item.Properties()));
+                    new Item.Properties().tab(ModCreativeModeTab.GRINNERSTAB)));
     public static final RegistryObject<Item> BROODRAT_SPAWN_EGG = ITEMS.register("broodrat_spawn_egg",
             () -> new ForgeSpawnEggItem(ModEntityTypes.BROODRAT, 0x54bfff, 0xF473f2e,
-                    new Item.Properties()));
+                    new Item.Properties().tab(ModCreativeModeTab.GRINNERSTAB)));
     public static final RegistryObject<Item> FIRENEWT_SPAWN_EGG = ITEMS.register("firenewt_spawn_egg",
             () -> new ForgeSpawnEggItem(ModEntityTypes.FIRENEWT, 0x54b555, 0xF45552e,
-                    new Item.Properties()));
+                    new Item.Properties().tab(ModCreativeModeTab.GRINNERSTAB)));
 
     public static final RegistryObject<Item> MONSTERFLESH = ITEMS.register("monsterflesh",
-            () -> new Item(new Item.Properties()
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.GRINNERSTAB)
                     .food(new FoodProperties.Builder().nutrition(3).saturationMod(2)
                             .effect(() -> new MobEffectInstance(MobEffects.WITHER, 100, 0), 0.5F)
                             .effect(() -> new MobEffectInstance(MobEffects.WEAKNESS, 100, 0), 0.5F)
@@ -62,26 +62,26 @@ public class ModItems {
                             .build())));
 
     public static final RegistryObject<Item> RATTAIL = ITEMS.register("rattail",
-            () -> new Item(new Item.Properties()
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.GRINNERSTAB)
                     .food(new FoodProperties.Builder().nutrition(1).saturationMod(1)
                             .effect(() -> new MobEffectInstance(MobEffects.HARM, 10, 0), 0.7F)
                             .build())));
     public static final RegistryObject<Item> MONSTERBONE = ITEMS.register("monsterbone",
-            () -> new Item(new Item.Properties()));
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.GRINNERSTAB)));
     public static final RegistryObject<Item> RATTAILBUNDLE = ITEMS.register("rattailbundle",
-            () -> new Item(new Item.Properties()));
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.GRINNERSTAB)));
     public static final RegistryObject<Item> MONSTERLEATHER = ITEMS.register("monsterleather",
-            () -> new Item(new Item.Properties()));
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.GRINNERSTAB)));
     public static final RegistryObject<Item> MONSTERFURTUFT = ITEMS.register("monsterfurtuft",
-            () -> new Item(new Item.Properties()));
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.GRINNERSTAB)));
     public static final RegistryObject<Item> MONSTERFABRIC = ITEMS.register("monsterfabric",
-            () -> new Item(new Item.Properties()));
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.GRINNERSTAB)));
     public static final RegistryObject<Item> ENTLINGCORE = ITEMS.register("entlingcore",
-            () -> new Item(new Item.Properties()));
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.GRINNERSTAB)));
     public static final RegistryObject<Item> ENTBARK = ITEMS.register("entbark",
-            () -> new Item(new Item.Properties()));
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.GRINNERSTAB)));
     public static final RegistryObject<Item> SPIKEPROJECTILE = ITEMS.register("spikeprojectile",
-            () -> new SpikeProjectileItem(new Item.Properties()));
+            () -> new SpikeProjectileItem(new Item.Properties().tab(ModCreativeModeTab.GRINNERSTAB)));
 
     public static final RegistryObject<ArmorItem> LIGHTMONSTERBONEARMOR_HELMET = ITEMS.register("lightmonsterbonearmor_helmet",
             () -> new Nightvison_Perk(ArmorTiers.LIGHTMONSTERBONEARMOR, EquipmentSlot.HEAD, props()));
@@ -123,7 +123,7 @@ public class ModItems {
             () -> new Rat_Perk(ArmorTiers.RATARMOR, EquipmentSlot.LEGS, props()));
 
 
-private static Item.Properties props(){return new Item.Properties(); }
+private static Item.Properties props(){return new Item.Properties().tab(ModCreativeModeTab.GRINNERSTAB); }
        public static void register(IEventBus eventBus) {
     ITEMS.register(eventBus);    }
 

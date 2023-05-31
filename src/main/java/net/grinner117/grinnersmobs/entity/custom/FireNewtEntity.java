@@ -22,18 +22,22 @@ import net.minecraft.world.entity.projectile.LargeFireball;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.Vec3;
-import software.bernie.geckolib.animatable.GeoEntity;
-import software.bernie.geckolib.core.animatable.instance.AnimatableInstanceCache;
-import software.bernie.geckolib.core.animatable.instance.SingletonAnimatableInstanceCache;
-import software.bernie.geckolib.core.animation.*;
-import software.bernie.geckolib.core.object.PlayState;
+import software.bernie.geckolib3.core.AnimationState;
+import software.bernie.geckolib3.core.IAnimatable;
+import software.bernie.geckolib3.core.PlayState;
+import software.bernie.geckolib3.core.builder.AnimationBuilder;
+import software.bernie.geckolib3.core.controller.AnimationController;
+import software.bernie.geckolib3.core.event.predicate.AnimationEvent;
+import software.bernie.geckolib3.core.manager.AnimationData;
+import software.bernie.geckolib3.core.manager.AnimationFactory;
+import software.bernie.geckolib3.util.GeckoLibUtil;
 
 
-public class FireNewtEntity extends Monster implements GeoEntity {
+public class FireNewtEntity extends Monster implements IAnimatable {
     private static final EntityDataAccessor<Boolean> DATA_IS_CHARGING = SynchedEntityData.defineId(Ghast.class, EntityDataSerializers.BOOLEAN);
     private int explosionPower = 1;
 
-    private AnimatableInstanceCache factory = new SingletonAnimatableInstanceCache(this);
+    AnimationFactory manager = GeckoLibUtil.createFactory(this);
     public FireNewtEntity(EntityType<? extends Monster> EntityType, Level Level) {
         super(EntityType, Level);
         this.xpReward = 15;
@@ -162,37 +166,35 @@ public class FireNewtEntity extends Monster implements GeoEntity {
         return 1.0F;
     }
 
-    @Override
-    public void registerControllers(AnimatableManager.ControllerRegistrar controllers) {
-        controllers.add(new AnimationController(this, "controller",
-                0, this::predicate));
-        controllers.add(new AnimationController(this, "attackController",
-                0, this::attackPredicate));
-
+    private <E extends IAnimatable> PlayState predicate(AnimationEvent<E> event) {
+        if (event.isMoving()) {
+            event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.newt.walk", true));
+            return PlayState.CONTINUE;
+        }
+        event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.newt.idle", true));
+        return PlayState.CONTINUE;
     }
-        private PlayState predicate(AnimationState animationState) {
-            if(animationState.isMoving()) {
-                animationState.getController().setAnimation(RawAnimation.begin().then("animation.newt.walk", Animation.LoopType.LOOP));
-                return PlayState.CONTINUE;
-            }
 
-            animationState.getController().setAnimation(RawAnimation.begin().then("animation.newt.idle", Animation.LoopType.LOOP));
-            return PlayState.CONTINUE;
+    private PlayState attackPredicate(AnimationEvent event) {
+        if (this.swinging && event.getController().getAnimationState().equals(AnimationState.Stopped)) {
+            event.getController().markNeedsReload();
+            event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.newt.attack", false));
+            this.swinging = false;
         }
+        return PlayState.CONTINUE;
+    }
 
-        private PlayState attackPredicate(AnimationState state) {
-            if(this.swinging && state.getController().getAnimationState().equals(AnimationController.State.STOPPED)) {
-                state.getController().forceAnimationReset();
-                state.getController().setAnimation(RawAnimation.begin()
-                        .then("animation.newt.attack", Animation.LoopType.PLAY_ONCE));
-                this.swinging = false;
-            }
 
-            return PlayState.CONTINUE;
-        }
+    @Override
+    public void registerControllers(AnimationData data) {
+        data.addAnimationController(new AnimationController(this, "controller",
+                0, this::predicate));
+        data.addAnimationController(new AnimationController(this, "attackController",
+                0, this::attackPredicate));
+    }
 
-          @Override
-        public AnimatableInstanceCache getAnimatableInstanceCache() {
-              return factory;
-          }
+    @Override
+    public AnimationFactory getFactory() {
+        return manager;
+    }
 }

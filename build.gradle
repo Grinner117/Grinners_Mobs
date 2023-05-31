@@ -5,7 +5,7 @@ plugins {
 
 }
 
-version = '1.19.3 - 1.8'
+version = '1.19.2 - 1.8'
 group = 'net.grinner117.grinnersmobs'
 archivesBaseName = 'grinnersmobs'
 
@@ -14,7 +14,7 @@ java.toolchain.languageVersion = JavaLanguageVersion.of(17)
 println "Java: ${System.getProperty 'java.version'}, JVM: ${System.getProperty 'java.vm.version'} (${System.getProperty 'java.vendor'}), Arch: ${System.getProperty 'os.arch'}"
 minecraft {
 
-    mappings channel: 'official', version: '1.19.3'
+    mappings channel: 'official', version: '1.19.2'
 
 
 
@@ -105,8 +105,8 @@ repositories {
 }
 
 dependencies {
-    minecraft 'net.minecraftforge:forge:1.19.3-44.1.5'
-    implementation fg.deobf('software.bernie.geckolib:geckolib-forge-1.19.3:4.0.3')
+    minecraft 'net.minecraftforge:forge:1.19.2-43.2.0'
+    implementation fg.deobf('software.bernie.geckolib:geckolib-forge-1.19:3.1.40')
 }
 
 jar {

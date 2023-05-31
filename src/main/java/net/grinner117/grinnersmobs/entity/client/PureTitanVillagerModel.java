@@ -3,9 +3,9 @@ package net.grinner117.grinnersmobs.entity.client;
 import net.grinner117.grinnersmobs.GrinnersMobs;
 import net.grinner117.grinnersmobs.entity.custom.PureTitanVillagerEntity;
 import net.minecraft.resources.ResourceLocation;
-import software.bernie.geckolib.model.GeoModel;
+import software.bernie.geckolib3.model.AnimatedGeoModel;
 
-public class PureTitanVillagerModel extends GeoModel<PureTitanVillagerEntity> {
+public class PureTitanVillagerModel extends AnimatedGeoModel<PureTitanVillagerEntity> {
     @Override
     public ResourceLocation getModelResource(PureTitanVillagerEntity object) {
         return new ResourceLocation(GrinnersMobs.MODID, "geo/puretitanvillager.geo.json");
