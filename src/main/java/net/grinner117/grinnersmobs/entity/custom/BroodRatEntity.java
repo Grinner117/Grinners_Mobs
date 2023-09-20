@@ -1,5 +1,6 @@
 package net.grinner117.grinnersmobs.entity.custom;
 
+import net.grinner117.grinnersmobs.entity.ModEntityTypes;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
@@ -35,6 +36,7 @@ import software.bernie.geckolib3.util.GeckoLibUtil;
 public class BroodRatEntity extends Monster implements IAnimatable {
 
     AnimationFactory manager = GeckoLibUtil.createFactory(this);
+
     public BroodRatEntity(EntityType<? extends Monster> EntityType, Level Level) {
         super(EntityType, Level);
         this.xpReward = 40;
@@ -63,7 +65,16 @@ public class BroodRatEntity extends Monster implements IAnimatable {
         this.targetSelector.addGoal(2, new NearestAttackableTargetGoal<>(this, AbstractVillager.class, false));
     }
     //summons a childratentity every 15 seconds
-    
+    @Override
+    public void aiStep() {
+        super.aiStep();
+        if (this.tickCount % 400 == 0) {
+            ChildRatEntity ratsummon = new ChildRatEntity(ModEntityTypes.CHILDRAT.get(), this.level);
+            ratsummon.moveTo(this.getX(), this.getY(), this.getZ(), this.yRot, 0.0F);
+            this.level.addFreshEntity(ratsummon);
+        }
+    }
+
 
 
     protected PathNavigation createNavigation(Level p_33802_) {
