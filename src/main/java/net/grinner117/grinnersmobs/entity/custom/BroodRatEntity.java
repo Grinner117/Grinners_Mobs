@@ -62,6 +62,8 @@ public class BroodRatEntity extends Monster implements IAnimatable {
         this.targetSelector.addGoal(1, new NearestAttackableTargetGoal<>(this, Player.class, true));
         this.targetSelector.addGoal(2, new NearestAttackableTargetGoal<>(this, AbstractVillager.class, false));
     }
+    //summons a childratentity every 15 seconds
+    
 
 
     protected PathNavigation createNavigation(Level p_33802_) {
