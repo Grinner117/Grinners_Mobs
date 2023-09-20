@@ -30,7 +30,6 @@ public class ModItems {
     public static final RegistryObject<Item> PURETITANVILLAGER_SPAWN_EGG = ITEMS.register("puretitanvillager_spawn_egg",
             () -> new ForgeSpawnEggItem(ModEntityTypes.PURETITANVILLAGER, 0x22b841, 0x19782e,
                     new Item.Properties().tab(ModCreativeModeTab.GRINNERSTAB)));
-
     public static final RegistryObject<Item> ENTLINGOAK_SPAWN_EGG = ITEMS.register("entlingoak_spawn_egg",
             () -> new ForgeSpawnEggItem(ModEntityTypes.ENTLINGOAK, 0x22b841, 0xF4732e,
                     new Item.Properties().tab(ModCreativeModeTab.GRINNERSTAB)));

@@ -7,7 +7,7 @@ import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.level.Level;
 
 
-public class DireRatEntity extends BroodRatEntity {
+public class DireRatEntity extends Rat {
     public DireRatEntity(EntityType<? extends Monster> EntityType, Level Level) {
         super(EntityType, Level);
         this.xpReward = 40;

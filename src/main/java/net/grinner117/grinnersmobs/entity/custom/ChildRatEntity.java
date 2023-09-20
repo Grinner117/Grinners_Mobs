@@ -7,7 +7,7 @@ import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.level.Level;
 
 
-public class ChildRatEntity extends BroodRatEntity {
+public class ChildRatEntity extends Rat {
 
     public ChildRatEntity(EntityType<? extends Monster> EntityType, Level Level) {
         super(EntityType, Level);
